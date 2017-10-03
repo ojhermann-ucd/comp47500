@@ -1,0 +1,34 @@
+package partA;
+
+public class BnbProperty {
+	
+	// data fields
+	static int uniqueRegisterNumber;
+	private OwnersName ownersName;
+	private PostalAddress postalAddress;
+	private int rentalCostPerDay;
+	private int totalRentalDays;
+	
+	// constructor method; only one method because each property needs a unique register number and it is assumed this is assigned externally 
+	public BnbProperty(OwnersName ownersName, PostalAddress postalAddress, int rentalCostPerDay, int totalRentalDays) {
+		
+		// increment uniqueRegisterNumber
+		uniqueRegisterNumber++;
+		
+		// registerNumber
+		private int registerNumber = uniqueRegisterNumber;
+		
+		// populate the data fields
+		this.uniqueRegisterNumber = uniqueRegisterNumber;
+		this.ownersName = ownersName;
+		this.postalAddress = postalAddress;
+		this.rentalCostPerDay = rentalCostPerDay;
+		this.totalRentalDays = totalRentalDays;
+	}
+	
+	
+	
+	
+	
+
+}

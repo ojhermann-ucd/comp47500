@@ -1,0 +1,9 @@
+package partA;
+
+public class BnbProperty {
+	
+	// data fields
+	private UniqueRegisterNumber = uniqueRegisterNumber; 
+	
+
+}

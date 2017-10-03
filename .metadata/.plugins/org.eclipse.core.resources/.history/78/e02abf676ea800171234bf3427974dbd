@@ -1,0 +1,19 @@
+package partA;
+
+public class UniqueRegisterNumber {
+	
+	// data fields
+	static int uniqueRegisterNumber = 0;
+	int registerNumber = 0;
+	
+	// constructor
+	public UniqueRegisterNumber() {
+		uniqueRegisterNumber++;
+	}
+	
+	// getUniqueRegister
+	public int getUniqueRegisterNumber() {
+		return uniqueRegisterNumber;
+	}
+
+}

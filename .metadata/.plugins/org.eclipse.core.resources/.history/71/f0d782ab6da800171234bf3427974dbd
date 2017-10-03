@@ -1,0 +1,11 @@
+package partA;
+
+public class UniqueRegisterNumber {
+	
+	// data fields
+	static int uniqueRegisterNumber = 0;
+	
+	// constructor
+	
+
+}

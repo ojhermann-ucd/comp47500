@@ -1,26 +1,22 @@
 package partA;
 
-public abstract class BnbProperty {
+public class BnbProperty {
 	
-	// data fields
-	private int uniqueRegisterNumber;
-	private OwnersName ownersName;
-	private PostalAddress postalAddress;
-	private int rentalCostPerDay;
-	private int totalRentalDays;
+	// class data fields
+	static int uniqueRegisterNumber = 0;
+	
+	// object data fields
+	
 	
 	// constructor
-	public BnbProperty(int uniqueRegisterNumber, OwnersName ownersName, PostalAddress postalAddress, int rentalCostPerDay, int totalRentalDays) {
-		this.uniqueRegisterNumber = uniqueRegisterNumber;
-		this.ownersName = ownersName;
-		this.postalAddress = postalAddress;
-		this.rentalCostPerDay = rentalCostPerDay;
-		this.totalRentalDays = totalRentalDays;
+	public BnbProperty(int registerNumber) {
+		
+		// increment uniqueRegisterNumber
+		uniqueRegisterNumber++;
+		
+		// instantiate values
+		registerNumber = uniqueRegisterNumber;
 	}
-	
-	
-	
-	
 	
 
 }
