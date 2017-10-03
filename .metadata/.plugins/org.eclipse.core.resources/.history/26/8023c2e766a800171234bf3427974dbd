@@ -1,0 +1,11 @@
+package partA;
+
+public class OwnersName {
+	
+	// data fields
+	private String firstName;
+	private String lastName;
+	
+	
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyBnb/src/partA/Property.java&apos; to &apos;BnbProperty.java&apos;" description="Rename resource &apos;Property.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/partA/Property.java" name="BnbProperty.java" stamp="1507055232262" updateReferences="true"/>
+</session>

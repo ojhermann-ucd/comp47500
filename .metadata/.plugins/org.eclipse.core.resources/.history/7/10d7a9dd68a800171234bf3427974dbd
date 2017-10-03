@@ -1,0 +1,20 @@
+package partA;
+
+public abstract class BnbProperty {
+	
+	// data fields
+	private int uniqueRegisterNumber;
+	private OwnersName ownersName;
+	private PostalAddress postalAddress;
+	private int rentalCostPerDay;
+	private int totalRentalDays;
+	
+	// constructor
+	public BnbProperty(int uniqueRegisterNumber, OwnersName ownersName, PostalAddress postalAddress, int rentalCostPerDay) {
+		
+	}
+	
+	
+	
+
+}
