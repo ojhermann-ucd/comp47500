@@ -16,6 +16,7 @@ public class BnbProperty {
 	
 	
 	// CONSTRUCTORS
+	
 	// specified constructor
 	public BnbProperty(String name, String address, int rate, int days) {
 		
@@ -34,20 +35,21 @@ public class BnbProperty {
 	// empty constructor
 	public BnbProperty() {
 		
+	}
+	
+	
+	public BnbProperty() {
+		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
 		
-		// instantiate field values
+		// instantiate values
 		this.registerNumber = uniqueRegisterNumber;
 		this.name = null;
 		this.address = null;
 		this.rate = 0;
 		this.days = 0;
-		
 	}
-	
-	// SETTER METHODS
-	
 	
 
 }

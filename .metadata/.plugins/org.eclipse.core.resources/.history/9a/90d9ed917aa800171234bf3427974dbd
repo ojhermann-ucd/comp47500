@@ -46,8 +46,5 @@ public class BnbProperty {
 		
 	}
 	
-	// SETTER METHODS
-	
-	
 
 }

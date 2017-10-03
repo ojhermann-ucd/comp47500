@@ -16,6 +16,7 @@ public class BnbProperty {
 	
 	
 	// CONSTRUCTORS
+	
 	// specified constructor
 	public BnbProperty(String name, String address, int rate, int days) {
 		
@@ -28,7 +29,6 @@ public class BnbProperty {
 		this.address = address;
 		this.rate = rate;
 		this.days = days;
-		
 	}
 	
 	// empty constructor
@@ -45,9 +45,6 @@ public class BnbProperty {
 		this.days = 0;
 		
 	}
-	
-	// SETTER METHODS
-	
 	
 
 }

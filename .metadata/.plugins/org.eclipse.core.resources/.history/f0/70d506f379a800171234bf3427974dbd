@@ -2,10 +2,8 @@ package partA;
 
 public class BnbProperty {
 	
-	
 	// CLASS DATA FIELDS
 	static int uniqueRegisterNumber = 0;
-	
 	
 	// OBJECT DATA FIELDS
 	private int registerNumber;
@@ -14,8 +12,8 @@ public class BnbProperty {
 	private int rate;
 	private int days;
 	
-	
 	// CONSTRUCTORS
+	
 	// specified constructor
 	public BnbProperty(String name, String address, int rate, int days) {
 		
@@ -31,23 +29,19 @@ public class BnbProperty {
 		
 	}
 	
-	// empty constructor
+	
 	public BnbProperty() {
 		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
 		
-		// instantiate field values
+		// instantiate values
 		this.registerNumber = uniqueRegisterNumber;
 		this.name = null;
 		this.address = null;
 		this.rate = 0;
 		this.days = 0;
-		
 	}
-	
-	// SETTER METHODS
-	
 	
 
 }
