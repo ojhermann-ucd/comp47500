@@ -46,7 +46,6 @@ public class BnbProperty {
 		this.address = null;
 		this.rentalDayRate = 0;
 		this.daysRented = 0;
-		
 	}
 	
 	
@@ -93,14 +92,6 @@ public class BnbProperty {
 	// days
 	public int getDaysRented() {
 		return daysRented;
-	}
-	
-	
-	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
 	}
 		
 

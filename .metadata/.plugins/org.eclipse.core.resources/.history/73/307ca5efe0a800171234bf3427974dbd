@@ -91,16 +91,8 @@ public class BnbProperty {
 	}
 	
 	// days
-	public int getDaysRented() {
+	public int getDays() {
 		return daysRented;
-	}
-	
-	
-	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
 	}
 		
 

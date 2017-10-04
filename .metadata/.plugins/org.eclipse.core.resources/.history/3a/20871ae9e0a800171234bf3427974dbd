@@ -76,7 +76,7 @@ public class BnbProperty {
 	// GETTER METHODS
 	//______________________________________________________________________
 	// name
-	public String getOwnersName() {
+	public String getName() {
 		return ownersName;
 	}
 	
@@ -86,21 +86,13 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public int getRentalDayRate() {
+	public int getRate() {
 		return rentalDayRate;
 	}
 	
 	// days
-	public int getDaysRented() {
+	public int getDays() {
 		return daysRented;
-	}
-	
-	
-	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
 	}
 		
 

@@ -14,13 +14,13 @@ public class BnbProperty {
 	private String ownersName;
 	private String address;
 	private int rentalDayRate;
-	private int daysRented;
+	private int days;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbProperty(String ownersName, String address, int rentalDayRate, int daysRented) {
+	public BnbProperty(String ownersName, String address, int rentalDayRate, int days) {
 		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
@@ -30,7 +30,7 @@ public class BnbProperty {
 		this.ownersName = ownersName;
 		this.address = address;
 		this.rentalDayRate = rentalDayRate;
-		this.daysRented = daysRented;
+		this.days = days;
 		
 	}
 	
@@ -45,7 +45,7 @@ public class BnbProperty {
 		this.ownersName = null;
 		this.address = null;
 		this.rentalDayRate = 0;
-		this.daysRented = 0;
+		this.days = 0;
 		
 	}
 	
@@ -53,7 +53,7 @@ public class BnbProperty {
 	// SETTER METHODS
 	//______________________________________________________________________
 	// name
-	public void setOwnersName(String ownersName) {
+	public void setName(String ownersName) {
 		this.ownersName = ownersName;
 	}
 	
@@ -63,20 +63,20 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public void setRentalDayRate(int rentalDayRate) {
+	public void setRate(int rentalDayRate) {
 		this.rentalDayRate = rentalDayRate;
 	}
 	
 	// days
-	public void setDaysRented(int daysRented) {
-		this.daysRented = daysRented;
+	public void setDays(int days) {
+		this.days = days;
 	}
 	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
 	// name
-	public String getOwnersName() {
+	public String getName() {
 		return ownersName;
 	}
 	
@@ -86,21 +86,13 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public int getRentalDayRate() {
-		return rentalDayRate;
+	public int getRate() {
+		return rate;
 	}
 	
 	// days
-	public int getDaysRented() {
-		return daysRented;
-	}
-	
-	
-	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
+	public int getDays() {
+		return days;
 	}
 		
 

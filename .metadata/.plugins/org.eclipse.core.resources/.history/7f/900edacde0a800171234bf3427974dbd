@@ -53,7 +53,7 @@ public class BnbProperty {
 	// SETTER METHODS
 	//______________________________________________________________________
 	// name
-	public void setOwnersName(String ownersName) {
+	public void setName(String ownersName) {
 		this.ownersName = ownersName;
 	}
 	
@@ -63,12 +63,12 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public void setRentalDayRate(int rentalDayRate) {
+	public void setRate(int rentalDayRate) {
 		this.rentalDayRate = rentalDayRate;
 	}
 	
 	// days
-	public void setDaysRented(int daysRented) {
+	public void setDays(int daysRented) {
 		this.daysRented = daysRented;
 	}
 	
@@ -76,7 +76,7 @@ public class BnbProperty {
 	// GETTER METHODS
 	//______________________________________________________________________
 	// name
-	public String getOwnersName() {
+	public String getName() {
 		return ownersName;
 	}
 	
@@ -86,21 +86,13 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public int getRentalDayRate() {
+	public int getRate() {
 		return rentalDayRate;
 	}
 	
 	// days
-	public int getDaysRented() {
-		return daysRented;
-	}
-	
-	
-	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
+	public int getDays() {
+		return days;
 	}
 		
 
