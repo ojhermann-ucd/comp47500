@@ -1,0 +1,10 @@
+package partA;
+
+public class BnbHouse extends BnbProperty {
+	
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	private int stories;
+	private int fees;
+}

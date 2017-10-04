@@ -1,28 +1,29 @@
 package partA;
 
-public class BnbApartment extends BnbProperty {
+public class BnbHouse extends BnbProperty {
 	
 	
 	// OBJECT DATA FIELDS
 	//______________________________________________________________________
 	private int stories;
-	private int beds;
+	private int clearingFees;
+	
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbApartment(String name, String address, int rate, int days, int stories, int beds) {
+	public BnbHouse(String name, String address, int rate, int days, int stories, int clearingFees) {
 		super(name, address, rate, days);
 		this.stories = stories;
-		this.beds = beds;
+		this.clearingFees = clearingFees;
 	}
 	
 	// empty constructor
-	public BnbApartment() {
+	public BnbHouse() {
 		super();
 		this.stories = 0;
-		this.beds = 0;
+		this.clearingFees = 0;
 	}
 	
 	
@@ -33,21 +34,10 @@ public class BnbApartment extends BnbProperty {
 		this.stories = stories;
 	}
 	
-	// beds
-	public void setBeds(int beds) {
-		this.beds = beds;
-	}
-	
-	
-	// GETTER METHODS
-	//______________________________________________________________________
 	// stories
-	public int getStories() {
-		return stories;
+	public void setClearingFees(int clearingFeees) {
+		this.stories = stories;
 	}
 	
-	// beds
-	public int getBeds() {
-		return beds;
-	}
+	
 }

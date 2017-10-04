@@ -42,12 +42,12 @@ public class BnbApartment extends BnbProperty {
 	// GETTER METHODS
 	//______________________________________________________________________
 	// stories
-	public int getStories() {
+	public int getStories(int stories) {
 		return stories;
 	}
 	
 	// beds
-	public int getBeds() {
+	public int getBeds(int beds) {
 		return beds;
 	}
 }

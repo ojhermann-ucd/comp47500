@@ -91,7 +91,7 @@ public class BnbProperty {
 	}
 	
 	// days
-	public int getDays() {
+	public int getDays(int days) {
 		return days;
 	}
 		

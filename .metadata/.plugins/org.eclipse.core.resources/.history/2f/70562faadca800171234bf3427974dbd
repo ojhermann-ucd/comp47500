@@ -1,0 +1,12 @@
+package partA;
+
+public class BnbVilla extends BnbProperty {
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	private int dailyRoomService;
+	private int dailiyluxuryTax;
+	
+	
+	
+}

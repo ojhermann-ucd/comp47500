@@ -86,12 +86,12 @@ public class BnbProperty {
 	}
 	
 	// rate
-	public int getRate() {
+	public int getRate(int rate) {
 		return rate;
 	}
 	
 	// days
-	public int getDays() {
+	public int getDays(int days) {
 		return days;
 	}
 		

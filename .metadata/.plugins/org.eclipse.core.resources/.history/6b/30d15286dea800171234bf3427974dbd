@@ -10,7 +10,6 @@ public class BnbProperty {
 	
 	// OBJECT DATA FIELDS
 	//______________________________________________________________________
-	private int registerNumber;
 	private String name;
 	private String address;
 	private int rate;

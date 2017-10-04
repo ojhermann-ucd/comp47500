@@ -21,35 +21,6 @@ public class BnbHouse extends BnbProperty {
 	
 	// empty constructor
 	public BnbHouse() {
-		super();
-		this.stories = 0;
-		this.clearingFees = 0;
+		super(name, address, rate, days);
 	}
-	
-	
-	// SETTER METHODS
-	//______________________________________________________________________
-	// stories
-	public void setStories(int stories) {
-		this.stories = stories;
-	}
-	
-	// stories
-	public void setClearingFees(int clearingFees) {
-		this.clearingFees = clearingFees;
-	}
-
-	
-	// GETTER METHODS
-	//______________________________________________________________________
-	// stories
-	public int getStories() {
-		return stories;
-	}
-	
-	public int getClearingFees() {
-		return clearingFees;
-	}
-	
-	
 }

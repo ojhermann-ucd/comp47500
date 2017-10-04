@@ -47,7 +47,7 @@ public class BnbApartment extends BnbProperty {
 	}
 	
 	// beds
-	public int getBeds() {
+	public int getBeds(int beds) {
 		return beds;
 	}
 }

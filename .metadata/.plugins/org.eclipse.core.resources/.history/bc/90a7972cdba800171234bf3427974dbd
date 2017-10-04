@@ -1,0 +1,21 @@
+package partA;
+
+public class BnbHouse extends BnbProperty {
+	
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	private int stories;
+	private int clearingFees;
+	
+	
+	
+	// CONSTRUCTORS
+	//______________________________________________________________________
+	// specified constructor
+	public BnbHouse(String name, String address, int rate, int days, int stories, int beds) {
+		super(name, address, rate, days);
+		this.stories = stories;
+		this.beds = beds;
+	}
+}
