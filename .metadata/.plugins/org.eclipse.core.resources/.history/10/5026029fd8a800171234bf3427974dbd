@@ -1,0 +1,18 @@
+package partA;
+
+public class BnBApartment extends BnbProperty {
+	
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	private int stories;
+	private int beds;
+	
+	
+	// CONSTRUCTORS
+	//______________________________________________________________________
+	// specified constructor
+	public BnbApartment() {
+		
+	}
+}
