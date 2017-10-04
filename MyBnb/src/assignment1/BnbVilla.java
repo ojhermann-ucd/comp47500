@@ -1,6 +1,19 @@
 package assignment1;
 
+
+//IMPORTS
+import java.util.List;
+import java.util.Random;
+import java.util.ArrayList;
+
+
 public class BnbVilla extends BnbProperty {
+	
+	
+	// CLASS DATA FIELDS
+	//______________________________________________________________________
+	static List<BnbVilla> villaList = new ArrayList<BnbVilla>();
+	
 	
 	// OBJECT DATA FIELDS
 	//______________________________________________________________________
@@ -48,6 +61,23 @@ public class BnbVilla extends BnbProperty {
 	// dailyLuxuryTax
 	public int getDailyLuxuryTax() {
 		return dailyLuxuryTax;
+	}
+	
+	
+	// OTHER METHODS
+	//______________________________________________________________________
+	// fillInProperties
+	public void fillInProperties() {
+		
+		// data field
+		Random rn = new Random();
+		
+		// iterate over the villaList
+		for (int i = 0; i < villaList.size(); i++) {
+			villaList.get(i).rentProperty(rn.nextInt(15));
+			villaList.get(i).rentProperty(rn.nextInt(15));
+			villaList.get(i).rentProperty(rn.nextInt(15));
+		}
 	}
 	
 	
