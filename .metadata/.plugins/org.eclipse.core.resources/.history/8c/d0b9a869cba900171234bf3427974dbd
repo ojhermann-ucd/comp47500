@@ -1,0 +1,13 @@
+package assignment1;
+
+public class BnbMain {
+
+	public static void main(String[] args) {
+		// create a new property manager
+		BnbPropertyManager myPropertyManager = new BnbPropertyManager();
+		
+		
+
+	}
+
+}
