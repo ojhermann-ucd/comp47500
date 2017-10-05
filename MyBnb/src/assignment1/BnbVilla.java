@@ -77,9 +77,10 @@ public class BnbVilla extends BnbProperty {
 	@Override
 	public String toString() {
 		return
+				"Property Type: Villa" + "\n" +
+				super.toString() +
 				"Daily Room Service Fee: " + String.valueOf(this.getDailyRoomService()) + "\n" +
-				"Daily Luxury Tax: " + String.valueOf(this.getDailyLuxuryTax()) + "\n" + 
-				super.toString();
+				"Daily Luxury Tax: " + String.valueOf(this.getDailyLuxuryTax()) + "\n";
 	}
 	
 	

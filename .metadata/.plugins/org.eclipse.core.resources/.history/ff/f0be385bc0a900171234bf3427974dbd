@@ -1,0 +1,26 @@
+package assignment1;
+
+
+//IMPORTS
+import java.util.List;
+import java.util.Random;
+import java.util.ArrayList;
+
+
+public class BnbPropertyManager {
+	
+	
+	// OBJECT DATA FIELDS
+	private List<BnbApartment> apartmentList;
+	static List<BnbHouse> houseList;
+	private List<BnbVilla> villaList = new ArrayList<BnbVilla>();
+	
+	
+	// CONSTRUCTORS
+	//______________________________________________________________________
+	// constructor
+	public BnbPropertyManager() {
+		this.apartmentList = new ArrayList<BnbApartment>();
+		this.houseList  = new ArrayList<BnbHouse>();
+	}
+}

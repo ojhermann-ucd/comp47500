@@ -76,9 +76,10 @@ public class BnbHouse extends BnbProperty {
 	@Override
 	public String toString() {
 		return
+				"Property Type: House" + "\n" +
+				super.toString() +
 				"Stories: " + String.valueOf(this.getStories()) + "\n" +
-				"Clearing Fees: " + String.valueOf(this.getClearingFees()) + "\n" + 
-				super.toString();
+				"Clearing Fees: " + String.valueOf(this.getClearingFees()) + "\n";
 	}
 	
 	

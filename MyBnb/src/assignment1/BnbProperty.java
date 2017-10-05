@@ -125,6 +125,11 @@ public class BnbProperty {
 				+ "Days Rented: " + String.valueOf(this.getDaysRented()) + "\n"
 				+ "Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
 	}
+	
+	// rentProperty
+	public void rentProperty(int days) {
+		this.daysRented = this.daysRented + days;
+	}
 		
 
 }
