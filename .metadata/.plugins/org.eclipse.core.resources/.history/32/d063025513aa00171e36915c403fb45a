@@ -13,13 +13,13 @@ public class BnbVehicle implements BnbRentItem{
 	private int registerNumber;
 	private String owner;
 	private int daysRented;
-	private int rentPerDay;
+	private int rentalCostPerDay;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbVehicle(String owner, int daysRented, int rentPerDay) {
+	public BnbVehicle(String owner, int daysRented, int rentalCostPerDay) {
 		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
@@ -28,7 +28,7 @@ public class BnbVehicle implements BnbRentItem{
 		this.registerNumber = uniqueRegisterNumber;
 		this.owner = owner;
 		this.daysRented = daysRented;
-		this.rentPerDay = rentPerDay;
+		this.rentalCostPerDay = rentalCostPerDay;
 		
 	}
 	
@@ -43,7 +43,7 @@ public class BnbVehicle implements BnbRentItem{
 		this.registerNumber = uniqueRegisterNumber;
 		this.owner = null;
 		this.daysRented = 0;
-		this.rentPerDay = 0;
+		this.rentalCostPerDay = 0;
 		
 	}
 	
@@ -60,9 +60,9 @@ public class BnbVehicle implements BnbRentItem{
 		this.daysRented = daysRented;
 	}
 	
-	// rentPerDay
-	public void setrentPerDay(int rentPerDay) {
-		this.rentPerDay = rentPerDay;
+	// rentalCostPerDay
+	public void setRentalCostPerDay(int rentalCostPerDay) {
+		this.rentalCostPerDay = rentalCostPerDay;
 	}
 	
 	
@@ -83,9 +83,9 @@ public class BnbVehicle implements BnbRentItem{
 		return this.daysRented;
 	}
 	
-	// getrentPerDay
-	public int getrentPerDay() {
-		return this.rentPerDay;
+	// getRentalCostPerDay
+	public int getRentalCostPerDay() {
+		return this.rentalCostPerDay;
 	}
 	
 	// OTHER METHODS
@@ -97,7 +97,7 @@ public class BnbVehicle implements BnbRentItem{
 				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n" +
 				"Owner: " + this.getOwner().toString() + "\n" +
 				"Days Rented: " + String.valueOf(this.getdaysRented()) + "\n" +
-				"Rent Per Day: " + String.valueOf(this.getrentPerDay()) + "\n";
+				"Rent Per Day: " + String.valueOf(this.getRentalCostPerDay()) + "\n";
 	}
 	
 	

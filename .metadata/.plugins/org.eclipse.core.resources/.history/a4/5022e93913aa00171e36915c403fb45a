@@ -12,14 +12,14 @@ public class BnbVehicle implements BnbRentItem{
 	//______________________________________________________________________
 	private int registerNumber;
 	private String owner;
-	private int daysRented;
-	private int rentPerDay;
+	private int totalRentalDays;
+	private int rentalCostPerDay;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbVehicle(String owner, int daysRented, int rentPerDay) {
+	public BnbVehicle(String owner, int totalRentalDays, int rentalCostPerDay) {
 		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
@@ -27,8 +27,8 @@ public class BnbVehicle implements BnbRentItem{
 		// instantiate field values
 		this.registerNumber = uniqueRegisterNumber;
 		this.owner = owner;
-		this.daysRented = daysRented;
-		this.rentPerDay = rentPerDay;
+		this.totalRentalDays = totalRentalDays;
+		this.rentalCostPerDay = rentalCostPerDay;
 		
 	}
 	
@@ -42,8 +42,8 @@ public class BnbVehicle implements BnbRentItem{
 		// instantiate field values
 		this.registerNumber = uniqueRegisterNumber;
 		this.owner = null;
-		this.daysRented = 0;
-		this.rentPerDay = 0;
+		this.totalRentalDays = 0;
+		this.rentalCostPerDay = 0;
 		
 	}
 	
@@ -55,14 +55,14 @@ public class BnbVehicle implements BnbRentItem{
 		this.owner = owner;
 	}
 	
-	// daysRented
-	public void setdaysRented(int daysRented) {
-		this.daysRented = daysRented;
+	// totalRentalDays
+	public void setTotalRentalDays(int totalRentalDays) {
+		this.totalRentalDays = totalRentalDays;
 	}
 	
-	// rentPerDay
-	public void setrentPerDay(int rentPerDay) {
-		this.rentPerDay = rentPerDay;
+	// rentalCostPerDay
+	public void setRentalCostPerDay(int rentalCostPerDay) {
+		this.rentalCostPerDay = rentalCostPerDay;
 	}
 	
 	
@@ -78,14 +78,14 @@ public class BnbVehicle implements BnbRentItem{
 		return this.owner;
 	}
 	
-	// getdaysRented
-	public int getdaysRented() {
-		return this.daysRented;
+	// getTotalRentalDays
+	public int getTotalRentalDays() {
+		return this.totalRentalDays;
 	}
 	
-	// getrentPerDay
-	public int getrentPerDay() {
-		return this.rentPerDay;
+	// getRentalCostPerDay
+	public int getRentalCostPerDay() {
+		return this.rentalCostPerDay;
 	}
 	
 	// OTHER METHODS
@@ -96,13 +96,13 @@ public class BnbVehicle implements BnbRentItem{
 		return
 				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n" +
 				"Owner: " + this.getOwner().toString() + "\n" +
-				"Days Rented: " + String.valueOf(this.getdaysRented()) + "\n" +
-				"Rent Per Day: " + String.valueOf(this.getrentPerDay()) + "\n";
+				"Days Rented: " + String.valueOf(this.getTotalRentalDays()) + "\n" +
+				"Rent Per Day: " + String.valueOf(this.getRentalCostPerDay()) + "\n";
 	}
 	
 	
 	// rentalItem
 	public void rentalItem(int moreRentalDays) {
-		this.daysRented += moreRentalDays - 1;
+		this.totalRentalDays += moreRentalDays - 1;
 	}
 }
