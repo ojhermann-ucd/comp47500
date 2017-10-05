@@ -80,14 +80,13 @@ public class BnbVilla extends BnbProperty {
 				"Property Type: Villa" + "\n" +
 				super.toString() +
 				"Daily Room Service Fee: " + String.valueOf(this.getDailyRoomService()) + "\n" +
-				"Daily Luxury Tax: " + String.valueOf(this.getDailyLuxuryTax()) + "\n" +
-				"Income: " + String.valueOf(this.income()) + "\n";
+				"Daily Luxury Tax: " + String.valueOf(this.getDailyLuxuryTax()) + "\n";
 	}
 	
 	// income()
 	public int income() {
-		// income = days x (rent + fee - tax)
-		return this.getDaysRented() * (this.getRentPerDay() + this.getDailyRoomService() - this.getDailyLuxuryTax());
+		// income = 
+		return (this.getDaysRented() * this.getRentPerDay()) * this.getStories() * this.getClearingFees();
 	}
 	
 	

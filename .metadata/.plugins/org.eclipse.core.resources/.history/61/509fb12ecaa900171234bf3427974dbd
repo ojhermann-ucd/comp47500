@@ -169,30 +169,8 @@ public class BnbPropertyManager {
 	
 	// TOTAL INCOME
 	//______________________________________________________________________
-	// totalIncome()
-	public int calculateTotalIncome() {
-		
-		// object data field
-		int income = 0;
-		
-		// apartment
-		for (int i = 0; i < apartmentList.size(); i++) {
-			income += apartmentList.get(i).income();
-		}
-		
-		// house
-		for (int i = 0; i < houseList.size(); i++) {
-			income += houseList.get(i).income();
-		}
-		
-		// villa
-		for (int i = 0; i < villaList.size(); i++) {
-			income += villaList.get(i).income();
-		}
-		
-		// return
-		return income;
-				
+	public int totalIncome() {
+		return 1;
 	}
 		
 		

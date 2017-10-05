@@ -147,52 +147,16 @@ public class BnbPropertyManager {
 	
 	
 	// PRINT ALL PROPERTIES
-	//______________________________________________________________________
 	public void printAllProperties() {
 		// apartments
 		System.out.println("APARTMENTS");
 		for (int i = 0; i < apartmentList.size(); i++) {
 			apartmentList.get(i).toString();
 		}
-		// houses
 		System.out.println("HOUSES");
 		for (int i = 0; i < houseList.size(); i++) {
 			houseList.get(i).toString();
 		}
-		// villas
-		System.out.println("VILLAS");
-		for (int i = 0; i < villaList.size(); i++) {
-			villaList.get(i).toString();
-		}
-	}
-	
-	
-	// TOTAL INCOME
-	//______________________________________________________________________
-	// totalIncome()
-	public int calculateTotalIncome() {
-		
-		// object data field
-		int income = 0;
-		
-		// apartment
-		for (int i = 0; i < apartmentList.size(); i++) {
-			income += apartmentList.get(i).income();
-		}
-		
-		// house
-		for (int i = 0; i < houseList.size(); i++) {
-			income += houseList.get(i).income();
-		}
-		
-		// villa
-		for (int i = 0; i < villaList.size(); i++) {
-			income += villaList.get(i).income();
-		}
-		
-		// return
-		return income;
-				
 	}
 		
 		

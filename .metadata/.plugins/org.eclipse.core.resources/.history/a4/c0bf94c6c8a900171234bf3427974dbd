@@ -1,42 +1,42 @@
 package assignment1;
 
 
-//IMPORTS
+// IMPORTS
 import java.util.List;
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
 
-public class BnbHouse extends BnbProperty {
+public class BnbApartment extends BnbProperty {
 	
 	
 	// CLASS DATA FIELDS
 	//______________________________________________________________________
-	static List<BnbHouse> houseList = new ArrayList<BnbHouse>();
+	static List<BnbApartment> apartmentList = new ArrayList<BnbApartment>();
 	
 	
 	// OBJECT DATA FIELDS
 	//______________________________________________________________________
 	private int stories;
-	private int clearingFees;
+	private int beds;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbHouse (String postalAddress, String ownersName, int rentPerDay, int daysRented, int stories, int clearingFees) {
+	public BnbApartment(String postalAddress, String ownersName, int rentPerDay, int daysRented, int stories, int beds) {
 		super(postalAddress, ownersName, rentPerDay, daysRented);
 		this.stories = stories;
-		this.clearingFees = clearingFees;
-		houseList.add(this);
+		this.beds = beds;
+		apartmentList.add(this);
 	}
 	
 	// empty constructor
-	public BnbHouse() {
+	public BnbApartment() {
 		super();
 		this.stories = 0;
-		this.clearingFees = 0;
-		houseList.add(this);
+		this.beds = 0;
+		apartmentList.add(this);
 	}
 	
 	
@@ -47,11 +47,11 @@ public class BnbHouse extends BnbProperty {
 		this.stories = stories;
 	}
 	
-	// stories
-	public void setClearingFees(int clearingFees) {
-		this.clearingFees = clearingFees;
+	// beds
+	public void setBeds(int beds) {
+		this.beds = beds;
 	}
-
+	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
@@ -60,14 +60,15 @@ public class BnbHouse extends BnbProperty {
 		return stories;
 	}
 	
-	public int getClearingFees() {
-		return clearingFees;
+	// beds
+	public int getBeds() {
+		return beds;
 	}
 	
-	// getHouseList
-		public List<BnbHouse> getHouseList() {
-			return houseList;
-		}
+	// getApartmentList
+	public List<BnbApartment> getApartmentList() {
+		return apartmentList;
+	}
 	
 	
 	// OTHER METHODS
@@ -76,18 +77,16 @@ public class BnbHouse extends BnbProperty {
 	@Override
 	public String toString() {
 		return
-				"Property Type: House" + "\n" +
-				super.toString() +
-				"Stories: " + String.valueOf(this.getStories()) + "\n" +
-				"Clearing Fees: " + String.valueOf(this.getClearingFees()) + "\n" +
-				"Income: " + String.valueOf(this.income()) + "\n";
+				"Property Type: Apartment" + "\n"
+				+ super.toString() + "\n"
+				+ "Stories: " + String.valueOf(this.getStories()) + "\n"
+				+ "Beds: " + String.valueOf(this.getBeds()) + "\n";
 	}
 	
 	// income()
 	public int income() {
-		// income = days x stories x (rent + fees)
-		return this.getDaysRented() * this.getStories() * (this.getRentPerDay() + this.getClearingFees());
+		return this.getDaysRented()
 	}
 	
-	
+		
 }

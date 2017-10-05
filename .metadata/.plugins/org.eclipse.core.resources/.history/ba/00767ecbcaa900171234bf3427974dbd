@@ -170,7 +170,7 @@ public class BnbPropertyManager {
 	// TOTAL INCOME
 	//______________________________________________________________________
 	// totalIncome()
-	public int calculateTotalIncome() {
+	public int totalIncome() {
 		
 		// object data field
 		int income = 0;

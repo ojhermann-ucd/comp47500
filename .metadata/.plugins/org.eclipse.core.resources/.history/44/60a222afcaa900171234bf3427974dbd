@@ -169,8 +169,7 @@ public class BnbPropertyManager {
 	
 	// TOTAL INCOME
 	//______________________________________________________________________
-	// totalIncome()
-	public int calculateTotalIncome() {
+	public int totalIncome() {
 		
 		// object data field
 		int income = 0;
@@ -189,9 +188,6 @@ public class BnbPropertyManager {
 		for (int i = 0; i < villaList.size(); i++) {
 			income += villaList.get(i).income();
 		}
-		
-		// return
-		return income;
 				
 	}
 		

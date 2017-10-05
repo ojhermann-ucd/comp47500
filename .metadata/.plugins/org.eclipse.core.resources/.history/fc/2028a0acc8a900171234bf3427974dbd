@@ -80,14 +80,7 @@ public class BnbApartment extends BnbProperty {
 				"Property Type: Apartment" + "\n"
 				+ super.toString() + "\n"
 				+ "Stories: " + String.valueOf(this.getStories()) + "\n"
-				+ "Beds: " + String.valueOf(this.getBeds()) + "\n"
-				+ "Income: " + String.valueOf(this.income()) + "\n";
-	}
-	
-	// income()
-	public int income() {
-		// income = day x rent x stories x beds
-		return (this.getDaysRented() * this.getRentPerDay()) * this.getStories() * this.getBeds();
+				+ "Beds: " + String.valueOf(this.getBeds()) + "\n";
 	}
 	
 		
