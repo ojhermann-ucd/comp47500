@@ -1,0 +1,10 @@
+package assignment2;
+
+public class BnbCar extends BnbVehicle {
+
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	private int passengerNumbers; 
+	
+}

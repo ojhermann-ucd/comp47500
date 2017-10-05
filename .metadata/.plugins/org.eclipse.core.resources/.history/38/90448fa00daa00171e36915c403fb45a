@@ -106,3 +106,4 @@ public class BnbVehicle implements BnbRentItem{
 		this.totalRentalDays += moreRentalDays - 1;
 	}
 }
+
