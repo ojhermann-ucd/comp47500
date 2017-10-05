@@ -1,0 +1,14 @@
+package assignment2;
+
+public class BnbProperty implements BnbRentable {
+	
+	// CLASS DATA FIELDS
+	//______________________________________________________________________
+	static int uniqueRegisterNumber = 0;
+	
+	
+	// METHODS
+	
+	//
+	
+}

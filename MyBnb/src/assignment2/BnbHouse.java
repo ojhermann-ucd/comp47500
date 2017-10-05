@@ -1,18 +1,6 @@
-package assignment1;
+package assignment2;
 
-
-//IMPORTS
-import java.util.List;
-import java.util.Random;
-import java.util.ArrayList;
-
-
-public class BnbHouse extends BnbProperty {
-	
-	
-	// CLASS DATA FIELDS
-	//______________________________________________________________________
-	static List<BnbHouse> houseList = new ArrayList<BnbHouse>();
+public class BnbHouse extends BnbProperty{
 	
 	
 	// OBJECT DATA FIELDS
@@ -28,7 +16,6 @@ public class BnbHouse extends BnbProperty {
 		super(postalAddress, ownersName, rentPerDay, daysRented);
 		this.stories = stories;
 		this.clearingFees = clearingFees;
-		houseList.add(this);
 	}
 	
 	// empty constructor
@@ -36,7 +23,6 @@ public class BnbHouse extends BnbProperty {
 		super();
 		this.stories = 0;
 		this.clearingFees = 0;
-		houseList.add(this);
 	}
 	
 	
@@ -51,7 +37,7 @@ public class BnbHouse extends BnbProperty {
 	public void setClearingFees(int clearingFees) {
 		this.clearingFees = clearingFees;
 	}
-
+	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
@@ -62,11 +48,6 @@ public class BnbHouse extends BnbProperty {
 	
 	public int getClearingFees() {
 		return clearingFees;
-	}
-	
-	// getHouseList
-	public List<BnbHouse> getHouseList() {
-		return houseList;
 	}
 	
 	
@@ -88,6 +69,6 @@ public class BnbHouse extends BnbProperty {
 		// income = days x stories x (rent + fees)
 		return this.getDaysRented() * this.getStories() * (this.getRentPerDay() + this.getClearingFees());
 	}
-	
-	
+
+
 }

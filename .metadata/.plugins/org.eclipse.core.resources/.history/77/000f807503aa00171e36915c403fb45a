@@ -1,0 +1,6 @@
+package assignment2;
+
+interface BnbRentable{
+	
+	public void rentalItem(int rentalDays);
+}

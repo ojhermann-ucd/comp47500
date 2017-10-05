@@ -65,9 +65,9 @@ public class BnbHouse extends BnbProperty {
 	}
 	
 	// getHouseList
-	public List<BnbHouse> getHouseList() {
-		return houseList;
-	}
+		public List<BnbHouse> getHouseList() {
+			return houseList;
+		}
 	
 	
 	// OTHER METHODS
