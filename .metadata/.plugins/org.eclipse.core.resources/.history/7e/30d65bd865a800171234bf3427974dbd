@@ -1,8 +1,0 @@
-package partA;
-
-public abstract class Property {
-	
-	private String uniqueRegisterNumber;
-	
-
-}

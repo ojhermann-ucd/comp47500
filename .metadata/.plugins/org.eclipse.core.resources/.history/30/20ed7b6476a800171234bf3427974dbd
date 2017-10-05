@@ -1,9 +1,0 @@
-package partA;
-
-public class BnbProperty {
-	
-	// data fields
-	private int registerNumber = uniqueRegisterNumber.getUniqueRegisterNumber();
-	
-
-}
