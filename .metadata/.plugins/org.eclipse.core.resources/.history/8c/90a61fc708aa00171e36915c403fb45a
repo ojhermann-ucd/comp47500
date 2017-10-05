@@ -1,18 +1,12 @@
-package assignment1;
+package assignment2;
 
 
-//IMPORTS
-import java.util.List;
-import java.util.ArrayList;
-
-
-public class BnbProperty {
+public class BnbProperty implements BnbRentItem {
 	
 	
 	// CLASS DATA FIELDS
 	//______________________________________________________________________
 	static int uniqueRegisterNumber = 0;
-	static List<BnbProperty> propertyList = new ArrayList<BnbProperty>();
 	
 	
 	// OBJECT DATA FIELDS
@@ -39,10 +33,8 @@ public class BnbProperty {
 		this.rentPerDay = rentPerDay;
 		this.daysRented = daysRented;
 		
-		// add to propertyList
-		propertyList.add(this);
-		
 	}
+	
 	
 	// empty constructor
 	public BnbProperty() {
@@ -56,9 +48,6 @@ public class BnbProperty {
 		this.ownersName = null;
 		this.rentPerDay = 0;
 		this.daysRented = 0;
-		
-		// add to propertyList
-		propertyList.add(this);
 		
 	}
 	
@@ -88,11 +77,6 @@ public class BnbProperty {
 	
 	// GETTER METHODS
 	//______________________________________________________________________
-	// registerNumber
-	public int getRegisterNumber() {
-		return this.registerNumber;
-	}
-	
 	// postalAddress
 	public String getPostalAddress() {
 		return this.postalAddress;
@@ -113,11 +97,6 @@ public class BnbProperty {
 		return this.daysRented;
 	}
 	
-	// getPropertyList
-	public List<BnbProperty> getPropertyList() {
-		return propertyList;
-	}
-	
 	
 	// OTHER METHODS
 	//______________________________________________________________________	
@@ -125,18 +104,15 @@ public class BnbProperty {
 	@Override
 	public String toString() {
 		return 
-				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n" +
-				"Address: " + this.getPostalAddress().toString() + "\n" +
-				"Owner: " + this.getOwnersName().toString() + "\n" +
-				"Days Rented: " + String.valueOf(this.getDaysRented()) + "\n" +
-				"Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
+				"Address: " + this.getPostalAddress().toString() + "\n"
+				+ "Owner: " + this.getOwnersName().toString() + "\n"
+				+ "Days Rented: " + String.valueOf(this.getDaysRented()) + "\n"
+				+ "Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
 	}
 	
-	// rentProperty
-	public void rentProperty(int days) {
-		this.daysRented = this.daysRented + days;
+	// rentalItem
+	public void rentalItem(int moreRentalDays) {
+		this.daysRented += moreRentalDays - 1;
 	}
-		
-
+	
 }
-

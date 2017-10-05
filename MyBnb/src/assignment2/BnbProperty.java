@@ -112,7 +112,7 @@ public class BnbProperty implements BnbRentItem {
 	
 	// rentalItem
 	public void rentalItem(int moreRentalDays) {
-		this.daysRented += moreRentalDays - 1;
+		this.daysRented += moreRentalDays;
 	}
 	
 }

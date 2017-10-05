@@ -125,7 +125,7 @@ public class BnbProperty {
 	@Override
 	public String toString() {
 		return 
-				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n" +
+				"Register Number: " + this.getRegisterNumber().toString() + "/n" +
 				"Address: " + this.getPostalAddress().toString() + "\n" +
 				"Owner: " + this.getOwnersName().toString() + "\n" +
 				"Days Rented: " + String.valueOf(this.getDaysRented()) + "\n" +

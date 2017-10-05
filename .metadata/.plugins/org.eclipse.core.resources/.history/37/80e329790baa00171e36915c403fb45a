@@ -88,11 +88,6 @@ public class BnbProperty {
 	
 	// GETTER METHODS
 	//______________________________________________________________________
-	// registerNumber
-	public int getRegisterNumber() {
-		return this.registerNumber;
-	}
-	
 	// postalAddress
 	public String getPostalAddress() {
 		return this.postalAddress;
@@ -125,11 +120,10 @@ public class BnbProperty {
 	@Override
 	public String toString() {
 		return 
-				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n" +
-				"Address: " + this.getPostalAddress().toString() + "\n" +
-				"Owner: " + this.getOwnersName().toString() + "\n" +
-				"Days Rented: " + String.valueOf(this.getDaysRented()) + "\n" +
-				"Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
+				"Address: " + this.getPostalAddress().toString() + "\n"
+				+ "Owner: " + this.getOwnersName().toString() + "\n"
+				+ "Days Rented: " + String.valueOf(this.getDaysRented()) + "\n"
+				+ "Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
 	}
 	
 	// rentProperty

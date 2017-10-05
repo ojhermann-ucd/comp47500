@@ -1,0 +1,15 @@
+package assignment2;
+
+public class BnbVehicle {
+	
+	
+	// CLASS DATA FIELDS
+	//______________________________________________________________________
+	static int uniqueRegisterNumber = 0;
+	
+	
+	// OBJECT DATA FIELDS
+	//______________________________________________________________________
+	
+
+}
