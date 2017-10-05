@@ -24,10 +24,11 @@ public class BnbHouse extends BnbProperty {
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbHouse(String name, String address, int rate, int days, int stories, int clearingFees) {
-		super(name, address, rate, days);
+	public BnbHouse (String postalAddress, String ownersName, int rentPerDay, int daysRented, int stories, int clearingFees) {
+		super(postalAddress, ownersName, rentPerDay, daysRented);
 		this.stories = stories;
 		this.clearingFees = clearingFees;
+		houseList.add(this);
 	}
 	
 	// empty constructor
@@ -35,6 +36,7 @@ public class BnbHouse extends BnbProperty {
 		super();
 		this.stories = 0;
 		this.clearingFees = 0;
+		houseList.add(this);
 	}
 	
 	
@@ -62,21 +64,21 @@ public class BnbHouse extends BnbProperty {
 		return clearingFees;
 	}
 	
+	// getHouseList
+		public List<BnbHouse> getHouseList() {
+			return houseList;
+		}
+	
 	
 	// OTHER METHODS
-	//______________________________________________________________________
-	// fillInProperties
-	public void fillInProperties() {
-		
-		// data field
-		Random rn = new Random();
-		
-		// iterate over the houseList
-		for (int i = 0; i < houseList.size(); i++) {
-			houseList.get(i).rentProperty(rn.nextInt(15));
-			houseList.get(i).rentProperty(rn.nextInt(15));
-			houseList.get(i).rentProperty(rn.nextInt(15));
-		}
+	//______________________________________________________________________	
+	// toString
+	@Override
+	public String toString() {
+		return
+				"Stories: " + String.valueOf(this.getStories()) + "\n" +
+				"Clearing Fees: " + String.valueOf(this.getClearingFees()) + "\n" + 
+				super.toString();
 	}
 	
 	

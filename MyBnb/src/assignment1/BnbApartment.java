@@ -24,8 +24,8 @@ public class BnbApartment extends BnbProperty {
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbApartment(String name, String address, int rate, int days, int stories, int beds) {
-		super(name, address, rate, days);
+	public BnbApartment(String postalAddress, String ownersName, int rentPerDay, int daysRented, int stories, int beds) {
+		super(postalAddress, ownersName, rentPerDay, daysRented);
 		this.stories = stories;
 		this.beds = beds;
 		apartmentList.add(this);
@@ -65,22 +65,21 @@ public class BnbApartment extends BnbProperty {
 		return beds;
 	}
 	
+	// getApartmentList
+	public List<BnbApartment> getApartmentList() {
+		return apartmentList;
+	}
+	
 	
 	// OTHER METHODS
-	//______________________________________________________________________
-	// fillInProperties
-	public void fillInProperties() {
-		
-		// data field
-		Random rn = new Random();
-		
-		// iterate over the apartmentList
-		for (int i = 0; i < apartmentList.size(); i++) {
-			// use rentProperty three times with random rentalDays values between 0 and 14
-			apartmentList.get(i).rentProperty(rn.nextInt(15));
-			apartmentList.get(i).rentProperty(rn.nextInt(15));
-			apartmentList.get(i).rentProperty(rn.nextInt(15));
-		}
+	//______________________________________________________________________	
+	// toString
+	@Override
+	public String toString() {
+		return
+				super.toString() + "\n"
+				+ "Stories: " + String.valueOf(this.getStories()) + "\n"
+				+ "Beds: " + String.valueOf(this.getBeds()) + "\n";
 	}
 	
 		

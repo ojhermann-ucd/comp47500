@@ -1,37 +1,46 @@
 package assignment1;
 
 
+//IMPORTS
+import java.util.List;
+import java.util.ArrayList;
+
+
 public class BnbProperty {
 	
 	
 	// CLASS DATA FIELDS
 	//______________________________________________________________________
 	static int uniqueRegisterNumber = 0;
+	static List<BnbProperty> propertyList = new ArrayList<BnbProperty>();
 	
 	
 	// OBJECT DATA FIELDS
 	//______________________________________________________________________
 	private int registerNumber;
+	private String postalAddress;
 	private String ownersName;
-	private String address;
-	private int rentalDayRate;
+	private int rentPerDay;
 	private int daysRented;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbProperty(String ownersName, String address, int rentalDayRate, int daysRented) {
+	public BnbProperty(String postalAddress, String ownersName, int rentPerDay, int daysRented) {
 		
 		// increment uniqueRegisterNumber
 		uniqueRegisterNumber++;
 		
 		// instantiate field values
 		this.registerNumber = uniqueRegisterNumber;
+		this.postalAddress = postalAddress;
 		this.ownersName = ownersName;
-		this.address = address;
-		this.rentalDayRate = rentalDayRate;
+		this.rentPerDay = rentPerDay;
 		this.daysRented = daysRented;
+		
+		// add to propertyList
+		propertyList.add(this);
 		
 	}
 	
@@ -43,32 +52,35 @@ public class BnbProperty {
 		
 		// instantiate field values
 		this.registerNumber = uniqueRegisterNumber;
+		this.postalAddress = null;
 		this.ownersName = null;
-		this.address = null;
-		this.rentalDayRate = 0;
+		this.rentPerDay = 0;
 		this.daysRented = 0;
+		
+		// add to propertyList
+		propertyList.add(this);
 		
 	}
 	
 	
 	// SETTER METHODS
 	//______________________________________________________________________
-	// name
+	// postalAddress
+	public void setPostalAddress(String address) {
+		this.postalAddress = address;
+	}
+	
+	// ownersName
 	public void setOwnersName(String ownersName) {
 		this.ownersName = ownersName;
 	}
 	
-	// address
-	public void setAddress(String address) {
-		this.address = address;
+	// rentPerDay
+	public void setRentPerDay(int rentalDayRate) {
+		this.rentPerDay = rentalDayRate;
 	}
 	
-	// rate
-	public void setRentalDayRate(int rentalDayRate) {
-		this.rentalDayRate = rentalDayRate;
-	}
-	
-	// days
+	// daysRented
 	public void setDaysRented(int daysRented) {
 		this.daysRented = daysRented;
 	}
@@ -76,32 +88,42 @@ public class BnbProperty {
 	
 	// GETTER METHODS
 	//______________________________________________________________________
-	// name
+	// postalAddress
+	public String getPostalAddress() {
+		return this.postalAddress;
+	}
+	
+	// ownersName
 	public String getOwnersName() {
-		return ownersName;
+		return this.ownersName;
 	}
 	
-	// address
-	public String getAddress() {
-		return address;
+	// rentPerDay
+	public int getRentPerDay() {
+		return this.rentPerDay;
 	}
 	
-	// rate
-	public int getRentalDayRate() {
-		return rentalDayRate;
-	}
-	
-	// days
+	// daysRented
 	public int getDaysRented() {
-		return daysRented;
+		return this.daysRented;
+	}
+	
+	// getPropertyList
+	public List<BnbProperty> getPropertyList() {
+		return propertyList;
 	}
 	
 	
 	// OTHER METHODS
-	//______________________________________________________________________
-	// rentProperty
-	public void rentProperty(int rentalDays) {
-		this.daysRented = daysRented + rentalDays;
+	//______________________________________________________________________	
+	// toString
+	@Override
+	public String toString() {
+		return 
+				"Address: " + this.getPostalAddress().toString() + "\n"
+				+ "Owner: " + this.getOwnersName().toString() + "\n"
+				+ "Days Rented: " + String.valueOf(this.getDaysRented()) + "\n"
+				+ "Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";
 	}
 		
 
