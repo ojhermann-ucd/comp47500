@@ -158,17 +158,13 @@ public class BnbPropertyManager {
 		}
 		// houses
 		System.out.println("HOUSES");
-		System.out.println("______________________________________________________________________");
-		System.out.println("");
 		for (int i = 0; i < houseList.size(); i++) {
 			System.out.println(houseList.get(i).toString());
 		}
 		// villas
 		System.out.println("VILLAS");
-		System.out.println("______________________________________________________________________");
-		System.out.println("");
 		for (int i = 0; i < villaList.size(); i++) {
-			System.out.println(villaList.get(i).toString());
+			villaList.get(i).toString();
 		}
 	}
 	

@@ -15,8 +15,6 @@ public class BnbMain {
 		// calculate total income
 		int myIncome = myPropertyManager.calculateTotalIncome();
 		String myIncomeString = "Total Income: " + String.valueOf(myIncome);
-		System.out.println("______________________________________________________________________");
-		System.out.println("");
 		System.out.println(myIncomeString);
 	}
 

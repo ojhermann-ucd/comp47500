@@ -78,7 +78,7 @@ public class BnbApartment extends BnbProperty {
 	public String toString() {
 		return
 				"Property Type: Apartment" + "\n"
-				+ super.toString()
+				+ super.toString() +
 				+ "Stories: " + String.valueOf(this.getStories()) + "\n"
 				+ "Beds: " + String.valueOf(this.getBeds()) + "\n"
 				+ "Income: " + String.valueOf(this.income()) + "\n";
