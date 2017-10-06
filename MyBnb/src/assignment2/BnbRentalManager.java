@@ -90,26 +90,9 @@ public class BnbRentalManager {
 				// create a propertyArray by splitting on white spaces
 				String[] propertyArray = propertyDescription.split("\\s+");
 				
-				// check if first entry is an appropriate integer
-				IsInteger checkIsInteger = new IsInteger(propertyArray[0]);
-				
-				// extract the relevant type of information
-				if (checkIsInteger.check()) {
-					
-					// determine the property type
-					int propertyType = checkIsInteger.getValue();
-					
-					// evaluate an apartment: check type and length
-					if (propertyType == 1 && propertyArray.length == 7) {
-						
-					}
-				}
-				
-				
-				
-				
-				
-				
+				// create ExtractProperty object
+				ExtractProperty possibleProperty = new ExtractProperty(propertyArray);
+				System.out.println(possibleProperty.validEntry());
 				
 			}
 		
