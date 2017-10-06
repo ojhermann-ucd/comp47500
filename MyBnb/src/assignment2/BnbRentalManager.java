@@ -72,14 +72,18 @@ public class BnbRentalManager {
 		try {
 			
 			// get set up
-			File sourceFile = new File("InputProperty.txt");
+			File sourceFile = new File("src/assignment2/InputProperty.txt");
 			BufferedReader sourceLines = new BufferedReader(new FileReader(sourceFile));
 			String propertyDescription = "";
 			
 			// read all the lines and take appropriate action
 			while ((propertyDescription = sourceLines.readLine()) != null) {
-				// add the parser in here something new
+				// create a propertyArray by splitting on white spaces
+				String[] propertyArray = propertyDescription.split("\\s+");
+				System.out.println(propertyArray.toString());
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 	}
