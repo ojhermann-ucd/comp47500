@@ -21,6 +21,7 @@ public class ExtractProperty {
 	private int propertyType;
 	private String[] inputArray;
 
+	
 	// CONSTRUCTORS
 	// ______________________________________________________________________
 	// specified constructor
@@ -38,6 +39,7 @@ public class ExtractProperty {
 		this.inputArray = propertyArray;
 	}
 
+	
 	// VALIDATION
 	// ______________________________________________________________________
 	// checkInt()
@@ -123,4 +125,38 @@ public class ExtractProperty {
 		return false;
 	}
 
+	
+	// UPDATE
+	// ______________________________________________________________________
+	public void update() {
+		
+		// set propertyType
+		this.propertyType = Integer.parseInt(this.inputArray[0]);
+		
+		// fill in the other values based on the propertyType
+		if (this.propertyType == 3) {
+			this.postalAddress = this.inputArray[7];
+			this.ownersName = this.inputArray[6];
+			this.daysRented = Integer.parseInt(this.inputArray[5]);
+			this.rentPerDay = Integer.parseInt(this.inputArray[4]);
+			this.dailyLuxuryTax = Integer.parseInt(this.inputArray[3]);
+			this.dailyRoomService = Integer.parseInt(this.inputArray[2]);
+			this.beds = Integer.parseInt(this.inputArray[1]);
+		} else if (this.propertyType == 2){
+			this.postalAddress = this.inputArray[6];
+			this.ownersName = this.inputArray[5];
+			this.daysRented = Integer.parseInt(this.inputArray[4]);
+			this.rentPerDay = Integer.parseInt(this.inputArray[3]);
+			this.clearingFees = Integer.parseInt(this.inputArray[2]);
+			this.stories = Integer.parseInt(this.inputArray[1]);
+		} else {
+			this.postalAddress = this.inputArray[6];
+			this.ownersName = this.inputArray[5];
+			this.daysRented = Integer.parseInt(this.inputArray[4]);
+			this.rentPerDay = Integer.parseInt(this.inputArray[3]);
+			this.beds = Integer.parseInt(this.inputArray[2]);
+			this.stories = Integer.parseInt(this.inputArray[1]);
+		}
+		
+	}
 }

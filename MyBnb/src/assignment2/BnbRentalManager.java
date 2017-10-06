@@ -92,7 +92,11 @@ public class BnbRentalManager {
 				
 				// create ExtractProperty object
 				ExtractProperty possibleProperty = new ExtractProperty(propertyArray);
-				System.out.println(possibleProperty.validEntry());
+				
+				// if it's a valid entry, then populate the appropriate object and add it to an appropriate arrayList
+				if (possibleProperty.validEntry()) {
+					
+				}
 				
 			}
 		
