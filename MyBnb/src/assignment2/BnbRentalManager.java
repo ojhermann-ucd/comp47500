@@ -34,6 +34,7 @@ public class BnbRentalManager {
 		this.villaList = new ArrayList<BnbVilla>();
 		this.carList = new ArrayList<BnbCar>();
 		this.truckList = new ArrayList<BnbTruck>();
+		this.fileName = fileName;
 	}
 	
 	
@@ -94,7 +95,14 @@ public class BnbRentalManager {
 				
 				// extract the relevant type of information
 				if (checkIsInteger.check()) {
+					
+					// determine the property type
 					int propertyType = checkIsInteger.getValue();
+					
+					// evaluate an apartment: check type and length
+					if (propertyType == 1 && propertyArray.length == 7) {
+						
+					}
 				}
 				
 				
