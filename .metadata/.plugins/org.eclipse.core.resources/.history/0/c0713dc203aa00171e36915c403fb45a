@@ -1,9 +1,0 @@
-package assignment2;
-
-interface BnbRentable{
-	
-	// METHOD SIGNATURES
-	// rentalItem
-	public void rentalItem(int rentalDays);
-	
-}

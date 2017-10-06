@@ -1,6 +1,0 @@
-package assignment1;
-
-public class BnbTuple {
-	private A a;
-	
-}

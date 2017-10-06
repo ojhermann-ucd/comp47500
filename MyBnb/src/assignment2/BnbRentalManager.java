@@ -78,7 +78,7 @@ public class BnbRentalManager {
 			
 			// read all the lines and take appropriate action
 			while ((propertyDescription = sourceLines.readLine()) != null) {
-				// add the parser in here
+				// add the parser in here something new
 			}
 		}
 		
