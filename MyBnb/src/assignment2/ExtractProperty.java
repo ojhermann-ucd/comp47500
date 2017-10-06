@@ -159,4 +159,27 @@ public class ExtractProperty {
 		}
 		
 	}
+	
+	
+	// CREATE
+	// ______________________________________________________________________
+	public BnbApartment createApartment() {
+		
+		// create the shell
+		BnbApartment myApartment = new BnbApartment();
+		
+		// populate the shell
+		myApartment.setBeds(this.beds);
+		myApartment.setDaysRented(this.daysRented);
+		myApartment.setOwnersName(this.ownersName);
+		myApartment.setPostalAddress(this.postalAddress);
+		myApartment.setRentPerDay(this.rentPerDay);
+		myApartment.setStories(this.stories);
+		
+		// return
+		return myApartment;
+	}
+	
+	
+	
 }
