@@ -56,10 +56,5 @@ public class BnbPropertyManager {
 		return this.carList;
 	}
 	
-	//getTruckList
-	public List<BnbTruck> getTruckList() {
-		return this.truckList;
-	}
-	
 	
 }

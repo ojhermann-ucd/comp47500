@@ -34,32 +34,7 @@ public class BnbPropertyManager {
 	}
 	
 	
-	// GETTER METHODS
-	//______________________________________________________________________
-	// getApartmentList
-	public List<BnbApartment> getApartmentList() {
-		return this.apartmentList;
-	}
 	
-	// getHouseList
-	public List<BnbHouse> getHouseList() {
-		return this.houseList;
-	}
-	
-	// getVillaList
-	public List<BnbVilla> getVillaList() {
-		return this.villaList;
-	}
-	
-	// getCarList
-	public List<BnbCar> getCarList() {
-		return this.carList;
-	}
-	
-	//getTruckList
-	public List<BnbTruck> getTruckList() {
-		return this.truckList;
-	}
 	
 	
 }
