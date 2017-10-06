@@ -1,0 +1,10 @@
+x Read in file
+
+x Convert line to array
+
+x Check if first element is integer
+
+x Check if first element is appropriate integer: greater than zero, less than four
+
+Conditioning on propertyType, make sure there is appropriate information
+- correct type

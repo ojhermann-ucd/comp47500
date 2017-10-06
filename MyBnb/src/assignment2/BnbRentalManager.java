@@ -22,6 +22,7 @@ public class BnbRentalManager {
 	private List<BnbVilla> villaList;
 	private List<BnbCar> carList;
 	private List<BnbTruck> truckList;
+	private String fileName = "src/assignment2/InputProperty.txt";
 	
 	
 	// CONSTRUCTORS
@@ -63,25 +64,48 @@ public class BnbRentalManager {
 		return this.truckList;
 	}
 	
+	//getFileName
+	public String getFileName() {
+		return this.fileName;
+	}
+	
 	
 	// READ INPUT PROPERTY FILE
 	//______________________________________________________________________
 	// readInputPropertyFile
 	public void readInputPropertyFile() throws IOException {
 		
+		// readInputPropertyFile
 		try {
 			
 			// get set up
-			File sourceFile = new File("src/assignment2/InputProperty.txt");
+			File sourceFile = new File(this.fileName);
 			BufferedReader sourceLines = new BufferedReader(new FileReader(sourceFile));
 			String propertyDescription = "";
 			
 			// read all the lines and take appropriate action
 			while ((propertyDescription = sourceLines.readLine()) != null) {
+				
 				// create a propertyArray by splitting on white spaces
 				String[] propertyArray = propertyDescription.split("\\s+");
-				System.out.println(propertyArray.toString());
+				
+				// check if first entry is an appropriate integer
+				IsInteger checkIsInteger = new IsInteger(propertyArray[0]);
+				
+				// extract the relevant type of information
+				if (checkIsInteger.check()) {
+					int propertyType = checkIsInteger.getValue();
+				}
+				
+				
+				
+				
+				
+				
+				
 			}
+		
+		// readInputPropertyFile
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
