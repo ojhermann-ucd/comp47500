@@ -2,6 +2,7 @@ APARTMENTS
 ______________________________________________________________________
 
 Property Type: Apartment
+Register Number: 1
 Address: Paradise_3
 Owner: George
 Days Rented: 0
@@ -11,6 +12,7 @@ Beds: 2
 Income: 0
 
 Property Type: Apartment
+Register Number: 2
 Address: Somewhere_4
 Owner: John
 Days Rented: 0
@@ -20,6 +22,7 @@ Beds: 3
 Income: 0
 
 Property Type: Apartment
+Register Number: 3
 Address: Devil’s_place_3
 Owner: Jane
 Days Rented: 0
@@ -32,6 +35,7 @@ HOUSES
 ______________________________________________________________________
 
 Property Type: House
+Register Number: 4
 Address: Paradise_13
 Owner: George
 Days Rented: 0
@@ -41,6 +45,7 @@ Clearing Fees: 50
 Income: 0
 
 Property Type: House
+Register Number: 5
 Address: Somewhere_14
 Owner: John
 Days Rented: 0
@@ -50,6 +55,7 @@ Clearing Fees: 50
 Income: 0
 
 Property Type: House
+Register Number: 6
 Address: Devil’s_place_13
 Owner: Jane
 Days Rented: 0
@@ -62,6 +68,7 @@ VILLAS
 ______________________________________________________________________
 
 Property Type: Villa
+Register Number: 7
 Address: Paradise_23
 Owner: George
 Days Rented: 0
@@ -71,6 +78,7 @@ Daily Luxury Tax: 10
 Income: 0
 
 Property Type: Villa
+Register Number: 8
 Address: Somewhere_24
 Owner: John
 Days Rented: 0
@@ -80,6 +88,7 @@ Daily Luxury Tax: 20
 Income: 0
 
 Property Type: Villa
+Register Number: 9
 Address: Devil’s_place_23
 Owner: Jane
 Days Rented: 0

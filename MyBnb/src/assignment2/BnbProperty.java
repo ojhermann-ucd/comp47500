@@ -97,6 +97,11 @@ public class BnbProperty implements BnbRentItem {
 		return this.daysRented;
 	}
 	
+	// registerNumber
+	public int getRegisterNumber() {
+		return this.registerNumber;
+	}
+	
 	
 	// OTHER METHODS
 	//______________________________________________________________________	
@@ -104,7 +109,8 @@ public class BnbProperty implements BnbRentItem {
 	@Override
 	public String toString() {
 		return 
-				"Address: " + this.getPostalAddress().toString() + "\n"
+				"Register Number: " + String.valueOf(this.getRegisterNumber()) + "\n"
+				+ "Address: " + this.getPostalAddress().toString() + "\n"
 				+ "Owner: " + this.getOwnersName().toString() + "\n"
 				+ "Days Rented: " + String.valueOf(this.getDaysRented()) + "\n"
 				+ "Rent Per Day: " + String.valueOf(this.getRentPerDay()) + "\n";

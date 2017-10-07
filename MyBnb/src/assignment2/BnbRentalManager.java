@@ -180,4 +180,28 @@ public class BnbRentalManager {
 		
 		
 	}
+	
+	
+	// FIND PROPERTY INDEX BY ID
+	public int findPropertyIndex(int possibleRegisterNumber) {
+		for (int i = 0; i < apartmentList.size(); i++) {
+			if (apartmentList.get(i).getRegisterNumber() == possibleRegisterNumber) {
+				return i;
+			}
+		} // end for
+		for (int i = 0; i < houseList.size(); i++) {
+			if (houseList.get(i).getRegisterNumber() == possibleRegisterNumber) {
+				return i;
+			}
+		} // end for
+		for (int i = 0; i < villaList.size(); i++) {
+			if (villaList.get(i).getRegisterNumber() == possibleRegisterNumber) {
+				return i;
+			}
+		} // end for
+			// make the function happy i.e. it doesn't know the condition
+		return -1;
+	}
+	
+	
 }
