@@ -17,11 +17,11 @@ Property Type: 1
 Register Number: 2
 Address: Somewhere_4
 Owner: John
-Days Rented: 0
+Days Rented: 12
 Rent Per Day: 50
 Stories: 2
 Beds: 3
-Income: 0
+Income: 3600
 
 Property Type: Apartment
 Property Type: 1

@@ -9,6 +9,7 @@ public class BnbMain {
 		
 		BnbRentalManager myRentalManager = new BnbRentalManager();
 		myRentalManager.readInputPropertyFile();
+		myRentalManager.giveRentalProperty();
 		myRentalManager.printAllProperties();
 
 	}

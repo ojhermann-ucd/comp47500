@@ -4,7 +4,6 @@ package assignment2;
 //IMPORTS
 // ArrayList
 import java.util.List;
-import java.util.Random;
 import java.util.ArrayList;
 // readInputPropertyFile
 import java.io.BufferedReader;
@@ -12,12 +11,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 // printAllProperties
-//import java.io.FileWriter;
-//import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.charset.Charset;
+// giveRentalProperty
+import javax.swing.*;
 
 
 public class BnbRentalManager {
@@ -182,31 +181,57 @@ public class BnbRentalManager {
 	
 	
 	// GIVE RENTAL PROPERTY
-	//______________________________________________________________________
+	// ______________________________________________________________________
 	// newRentalTransaction()
 	public void newRentalTransaction(int propertyID, int moreRentalDays) {
-		// apartment
-		for (int i = 0; i < apartmentList.size(); i++) {
-			if (apartmentList.get(i).getRegisterNumber() == propertyID) {
-				apartmentList.get(i).rentalItem(moreRentalDays);
+
+		// check if valid propertyID
+		if (propertyID > 0 && propertyID < BnbProperty.getUniqueRegisterNumber() + 1) {
+			// apartment
+			for (int i = 0; i < apartmentList.size(); i++) {
+				if (apartmentList.get(i).getRegisterNumber() == propertyID) {
+					apartmentList.get(i).rentalItem(moreRentalDays);
+					return;
+				}
 			}
-		}
-		// house
-		for (int i = 0; i < houseList.size(); i++) {
-			if (houseList.get(i).getRegisterNumber() == propertyID) {
-				houseList.get(i).rentalItem(moreRentalDays);
+			// house
+			for (int i = 0; i < houseList.size(); i++) {
+				if (houseList.get(i).getRegisterNumber() == propertyID) {
+					houseList.get(i).rentalItem(moreRentalDays);
+					return;
+				}
 			}
-		}
-		// villa
-		for (int i = 0; i < villaList.size(); i++) {
-			if (villaList.get(i).getRegisterNumber() == propertyID) {
-				villaList.get(i).rentalItem(moreRentalDays);
+			// villa
+			for (int i = 0; i < villaList.size(); i++) {
+				if (villaList.get(i).getRegisterNumber() == propertyID) {
+					villaList.get(i).rentalItem(moreRentalDays);
+					return;
+				}
 			}
+
 		}
 	}
 	
 	
-	
+	// giveRentalProperty
+	public void giveRentalProperty() {
+		// user input
+		String propertyIDString = JOptionPane.showInputDialog("Enter the Register Number of the property");
+		String moreRentalDaysString = JOptionPane.showInputDialog("Enter the days involved in the rental transaction");
+		
+		// convert to integers
+		int propertyID = Integer.parseInt(propertyIDString);
+		int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+		
+		// check if the propertyID is valid
+		if (propertyID > 0 && propertyID < BnbProperty.getUniqueRegisterNumber() + 1) {
+			this.newRentalTransaction(propertyID, moreRentalDays);
+			JOptionPane.showMessageDialog(null, "Your entries have been processed.");
+		} else {
+			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid property ID.");
+		}
+		
+	}
 	
 	
 	

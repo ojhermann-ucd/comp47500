@@ -113,6 +113,11 @@ public class BnbProperty implements BnbRentItem {
 		return this.propertyType;
 	}
 	
+	// uniqueRegisterNumber
+	public static int getUniqueRegisterNumber() {
+		return uniqueRegisterNumber;
+	}
+	
 	
 	// OTHER METHODS
 	//______________________________________________________________________	
