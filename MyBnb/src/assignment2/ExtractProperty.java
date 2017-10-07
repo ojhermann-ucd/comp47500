@@ -163,6 +163,14 @@ public class ExtractProperty {
 	}
 	
 	
+	// GETTER METHODS
+	// ______________________________________________________________________
+	// propertyType
+	public int getPropertyType() {
+		return this.propertyType;
+	}
+	
+	
 	// CREATE
 	// ______________________________________________________________________
 	// createApartment()

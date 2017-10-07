@@ -96,6 +96,30 @@ public class BnbRentalManager {
 				// if it's a valid entry, then populate the appropriate object and add it to an appropriate arrayList
 				if (possibleProperty.validEntry()) {
 					
+					// update possibleProperty to allow us to generate the appropriate object for an ArrayList
+					possibleProperty.update();
+					
+					// establish the propertyType
+					int propertyType = possibleProperty.getPropertyType();
+					
+					// add to the appropriate ArrayList
+					if (propertyType == 1) {
+						// create the BnbApartment object
+						BnbApartment myApartment = possibleProperty.createApartment();
+						// add myApartment to the appropriate ArrayList
+						apartmentList.add(myApartment);
+					} else if (propertyType == 2) {
+						// create the BnbHouse object
+						BnbHouse myHouse = possibleProperty.createHouse();
+						// add myHouse to the approporiate ArrayList
+						houseList.add(myHouse);
+					} else {
+						// create the BnbVilla object
+						BnbVilla myVilla = possibleProperty.createVilla();
+						// add myVilla to the appropriate ArrayList
+						villaList.add(myVilla);	
+					}
+					
 				}
 				
 			}
