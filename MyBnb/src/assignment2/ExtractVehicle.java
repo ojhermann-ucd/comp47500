@@ -118,6 +118,7 @@ public class ExtractVehicle {
 		return false;
 	}
 	
+	
 	// UPDATE
 	// ______________________________________________________________________
 	public void update() {
@@ -141,5 +142,49 @@ public class ExtractVehicle {
 		
 	}
 	
+
+	// GETTER METHODS
+	// ______________________________________________________________________
+	// propertyType
+	public int getVehicleType() {
+		return this.vehicleType;
+	}
+	
+	
+	// CREATE
+	// ______________________________________________________________________
+	// createCar()
+	public BnbCar createCar() {
+		
+		// create the shell
+		BnbCar myCar = new BnbCar();
+		
+		// populate the shell
+		myCar.setdaysRented(this.daysRented);
+		myCar.setOwner(this.owner);
+		myCar.setPassengerNumbers(this.passengerNumbers);
+		myCar.setrentPerDay(this.rentPerDay);
+		myCar.setVehicleType(this.vehicleType);
+		
+		// return
+		return myCar;
+	}
+	
+	// createTruck()
+	public BnbTruck createTruck() {
+		
+		// create the shell
+		BnbTruck myTruck = new BnbTruck();
+		
+		// populate the shell
+		myTruck.setcargoWeight(this.cargoWeight);
+		myTruck.setdaysRented(this.daysRented);
+		myTruck.setOwner(this.owner);
+		myTruck.setrentPerDay(this.rentPerDay);
+		myTruck.setVehicleType(this.vehicleType);
+		
+		// return
+		return myTruck;
+	}
 
 }
