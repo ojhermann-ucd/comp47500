@@ -50,4 +50,12 @@ public class BnbCar extends BnbVehicle {
 				super.toString() +
 				"Number of Passengers: " + String.valueOf(this.getPassengerNumbers()) + "\n";
 	}
+	
+	// income()
+	public int income() {
+		// income = days x rate
+		return this.getdaysRented() * this.getrentPerDay();
+	}
+	
+	
 }

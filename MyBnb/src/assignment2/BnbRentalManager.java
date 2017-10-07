@@ -371,6 +371,52 @@ public class BnbRentalManager {
 	}
 	
 	
+	// TOTAL INCOME
+	// ______________________________________________________________________
+	// propertyIncome()
+	public int propertyIncome() {
+		
+		// output
+		int propertyIncome = 0;
+		
+		// apartment
+		for (int i = 0; i < apartmentList.size(); i++) {
+			propertyIncome += apartmentList.get(i).income();
+		}
+		// house
+		for (int i = 0; i < houseList.size(); i++) {
+			propertyIncome += houseList.get(i).income();
+		}
+		// villa
+		for (int i = 0; i < villaList.size(); i++) {
+			propertyIncome += villaList.get(i).income();
+		}
+		
+		// return
+		return propertyIncome;
+		
+	}
+	
+	// vehicleIncome()
+	public int vehicleIncome() {
+		
+		// output
+		int vehicleIncome = 0;
+		
+		// car
+		for (int i = 0; i < carList.size(); i++) {
+			vehicleIncome += carList.get(i).income();
+		}
+		
+		// truck
+		for (int i = 0; i < truckList.size(); i++) {
+			vehicleIncome += truckList.get(i).income();
+		}
+		
+		// return
+		return vehicleIncome;
+		
+	}
 	
 	
 }

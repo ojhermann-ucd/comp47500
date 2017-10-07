@@ -50,4 +50,11 @@ public class BnbTruck extends BnbVehicle {
 				super.toString() +
 				"Cargo Weight: " + String.valueOf(this.getcargoWeight()) + "\n";
 	}
+	
+	// income()
+	public int income() {
+		// income = days x rate - weight
+		return this.getdaysRented() * this.getrentPerDay() - this.cargoWeight;
+	}
+	
 }
