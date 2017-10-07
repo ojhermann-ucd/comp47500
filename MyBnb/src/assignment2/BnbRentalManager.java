@@ -11,18 +11,28 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+// printAllProperties
+//import java.io.FileWriter;
+//import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.charset.Charset;
 
 
 public class BnbRentalManager {
 	
 	
 	// OBJECT DATA FIELDS
+	// ArrayLists
 	private List<BnbApartment> apartmentList;
 	private List<BnbHouse> houseList;
 	private List<BnbVilla> villaList;
 	private List<BnbCar> carList;
 	private List<BnbTruck> truckList;
-	private String fileName = "src/assignment2/InputProperty.txt";
+	// FileName
+	private String propertyInputFileName = "src/assignment2/InputProperty.txt";
+	private String propertyOutputFileName = "src/assignment2/OutputProperty.txt";
 	
 	
 	// CONSTRUCTORS
@@ -34,7 +44,7 @@ public class BnbRentalManager {
 		this.villaList = new ArrayList<BnbVilla>();
 		this.carList = new ArrayList<BnbCar>();
 		this.truckList = new ArrayList<BnbTruck>();
-		this.fileName = fileName;
+		this.propertyInputFileName = propertyInputFileName;
 	}
 	
 	
@@ -65,9 +75,9 @@ public class BnbRentalManager {
 		return this.truckList;
 	}
 	
-	//getFileName
-	public String getFileName() {
-		return this.fileName;
+	//getpropertyInputFileName
+	public String getpropertyInputFileName() {
+		return this.propertyInputFileName;
 	}
 	
 	
@@ -80,7 +90,7 @@ public class BnbRentalManager {
 		try {
 			
 			// get set up
-			File sourceFile = new File(this.fileName);
+			File sourceFile = new File(this.propertyInputFileName);
 			BufferedReader sourceLines = new BufferedReader(new FileReader(sourceFile));
 			String propertyDescription = "";
 			
@@ -132,4 +142,42 @@ public class BnbRentalManager {
 	}
 	
 	
+	// PRINT ALL PROPERTIES
+	//______________________________________________________________________
+	public void printAllProperties() throws IOException {
+		
+		// create a string ArrayList
+		List<String> stringOutputs = new ArrayList<String>();
+		// populate with Apartment Strings
+		stringOutputs.add("APARTMENTS");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		for (int i = 0; i < apartmentList.size(); i++) {
+			stringOutputs.add(apartmentList.get(i).toString());
+		}
+		// populate with House Strings
+		stringOutputs.add("HOUSES");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		for (int i = 0; i < houseList.size(); i++) {
+			stringOutputs.add(houseList.get(i).toString());
+		}
+		// populate with Villa Strings
+		stringOutputs.add("VILLAS");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		for (int i = 0; i < villaList.size(); i++) {
+			stringOutputs.add(villaList.get(i).toString());
+		}
+
+		Path file = Paths.get(propertyOutputFileName);
+		try {
+			Files.write(file, stringOutputs, Charset.forName("UTF-8"));
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 }
