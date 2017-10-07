@@ -32,6 +32,8 @@ public class BnbRentalManager {
 	// FileName
 	private String propertyInputFileName = "src/assignment2/InputProperty.txt";
 	private String propertyOutputFileName = "src/assignment2/OutputProperty.txt";
+	private String vehicleInputFileName = "src/assignment2/InputVehicle.txt";
+	private String vehicleOutputFileName = "src/assignment2/OutputVehicle.txt";
 	
 	
 	// CONSTRUCTORS
@@ -229,6 +231,141 @@ public class BnbRentalManager {
 			JOptionPane.showMessageDialog(null, "Your entries have been processed.");
 		} else {
 			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid property ID.");
+		}
+		
+	}
+	
+	
+	// READ INPUT VEHICLE FILE
+	//______________________________________________________________________
+	// readInputPropertyFile
+	public void readInputVehicleFile() throws IOException {
+		
+		// readInputPropertyFile
+		try {
+			
+			// get set up
+			File sourceFile = new File(this.vehicleInputFileName);
+			BufferedReader sourceLines = new BufferedReader(new FileReader(sourceFile));
+			String vehicleDescription = "";
+			
+			// read all the lines and take appropriate action
+			while ((vehicleDescription = sourceLines.readLine()) != null) {
+				
+				// create a propertyArray by splitting on white spaces
+				String[] propertyArray = vehicleDescription.split("\\s+");
+				
+				// create ExtractProperty object
+				ExtractVehicle possibleVehicle = new ExtractVehicle(propertyArray);
+				
+				// if it's a valid entry, then populate the appropriate object and add it to an appropriate arrayList
+				if (possibleVehicle.validEntry()) {
+					
+					// update possibleProperty to allow us to generate the appropriate object for an ArrayList
+					possibleVehicle.update();
+					
+					// establish the propertyType
+					int vehicleType = possibleVehicle.getVehicleType();
+					
+					// add to the appropriate ArrayList
+					if (vehicleType == 1) {
+						// create the BnbApartment object
+						BnbCar myCar = possibleVehicle.createCar();
+						// add myApartment to the appropriate ArrayList
+						carList.add(myCar);
+					} else {
+						// create the BnbVilla object
+						BnbTruck myTruck = possibleVehicle.createTruck();
+						// add myVilla to the appropriate ArrayList
+						truckList.add(myTruck);	
+					}
+					
+				}
+				
+			}
+		
+		// readInputPropertyFile
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	// PRINT ALL VEHICLES
+	//______________________________________________________________________
+	public void printAllVehicles() throws IOException {
+		
+		// create a string ArrayList
+		List<String> stringOutputs = new ArrayList<String>();
+		// populate with Car Strings
+		stringOutputs.add("CARS");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		for (int i = 0; i < carList.size(); i++) {
+			stringOutputs.add(carList.get(i).toString());
+		}
+		// populate with Truck Strings
+		stringOutputs.add("TRUCKS");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		for (int i = 0; i < truckList.size(); i++) {
+			stringOutputs.add(truckList.get(i).toString());
+		}
+		
+		// write to file
+		Path file = Paths.get(vehicleOutputFileName);
+		try {
+			Files.write(file, stringOutputs, Charset.forName("UTF-8"));
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	
+	// FILL IN VEHICLES
+	// ______________________________________________________________________
+	// newVehicleTransaction()
+	public void newVehicleTransaction(int vehicleID, int moreRentalDays) {
+
+		// check if valid propertyID
+		if (vehicleID > 0 && vehicleID < BnbVehicle.getUniqueRegisterNumber() + 1) {
+			// car
+			for (int i = 0; i < carList.size(); i++) {
+				if (carList.get(i).getRegisterNumber() == vehicleID) {
+					carList.get(i).rentalItem(moreRentalDays);
+					return;
+				}
+			}
+			// truck
+			for (int i = 0; i < truckList.size(); i++) {
+				if (truckList.get(i).getRegisterNumber() == vehicleID) {
+					truckList.get(i).rentalItem(moreRentalDays);
+					return;
+				}
+			}
+
+		}
+	}
+	
+	// fillInVehicles
+	public void fillInVehicles() {
+		// user input
+		String vehicleIDString = JOptionPane.showInputDialog("Enter the Register Number of the vehicle");
+		String moreRentalDaysString = JOptionPane.showInputDialog("Enter the days involved in the rental transaction");
+		
+		// convert to integers
+		int vehicleID = Integer.parseInt(vehicleIDString);
+		int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+		
+		// check if the propertyID is valid
+		if (vehicleID > 0 && vehicleID < BnbVehicle.getUniqueRegisterNumber() + 1) {
+			this.newRentalTransaction(vehicleID, moreRentalDays);
+			JOptionPane.showMessageDialog(null, "Your entries have been processed.");
+		} else {
+			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid vehicle ID.");
 		}
 		
 	}
