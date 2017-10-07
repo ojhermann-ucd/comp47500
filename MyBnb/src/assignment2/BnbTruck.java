@@ -46,6 +46,7 @@ public class BnbTruck extends BnbVehicle {
 	public String toString() {
 		return
 				"Vehicle Type: Car" + "\n" +
+				"Vehicle Type: " + String.valueOf(this.getVehicleType()) +
 				super.toString() +
 				"Cargo Weight: " + String.valueOf(this.getcargoWeight()) + "\n";
 	}
