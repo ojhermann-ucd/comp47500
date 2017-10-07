@@ -134,7 +134,7 @@ public class ExtractProperty {
 		this.propertyType = Integer.parseInt(this.inputArray[0]);
 		
 		// fill in the other values based on the propertyType
-		if (this.propertyType == 3) {
+		if (this.propertyType == 3) { //villa
 			this.postalAddress = this.inputArray[7];
 			this.ownersName = this.inputArray[6];
 			this.daysRented = Integer.parseInt(this.inputArray[5]);
@@ -142,14 +142,14 @@ public class ExtractProperty {
 			this.dailyLuxuryTax = Integer.parseInt(this.inputArray[3]);
 			this.dailyRoomService = Integer.parseInt(this.inputArray[2]);
 			this.beds = Integer.parseInt(this.inputArray[1]);
-		} else if (this.propertyType == 2){
+		} else if (this.propertyType == 2){ //house
 			this.postalAddress = this.inputArray[6];
 			this.ownersName = this.inputArray[5];
 			this.daysRented = Integer.parseInt(this.inputArray[4]);
 			this.rentPerDay = Integer.parseInt(this.inputArray[3]);
 			this.clearingFees = Integer.parseInt(this.inputArray[2]);
 			this.stories = Integer.parseInt(this.inputArray[1]);
-		} else {
+		} else {  // apartment
 			this.postalAddress = this.inputArray[6];
 			this.ownersName = this.inputArray[5];
 			this.daysRented = Integer.parseInt(this.inputArray[4]);
@@ -163,6 +163,7 @@ public class ExtractProperty {
 	
 	// CREATE
 	// ______________________________________________________________________
+	// createApartment()
 	public BnbApartment createApartment() {
 		
 		// create the shell
@@ -179,6 +180,26 @@ public class ExtractProperty {
 		// return
 		return myApartment;
 	}
+	
+	// createHouse()
+	public BnbHouse createHouse() {
+		
+		// create the shell
+		BnbHouse myHouse = new BnbHouse();
+		
+		// populate the shell
+		myHouse.setClearingFees(this.clearingFees);
+		myHouse.setDaysRented(this.daysRented);
+		myHouse.setOwnersName(this.ownersName);
+		myHouse.setPostalAddress(this.postalAddress);
+		myHouse.setRentPerDay(this.rentPerDay);
+		myHouse.setStories(this.stories);
+		
+		// return
+		return myHouse;
+	}
+	
+	
 	
 	
 	
