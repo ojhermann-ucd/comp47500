@@ -17,6 +17,7 @@ public class ExtractProperty {
 	// from villa
 	private int dailyRoomService;
 	private int dailyLuxuryTax;
+	private int rooms;
 	// general
 	private int propertyType;
 	private String[] inputArray;
@@ -36,6 +37,7 @@ public class ExtractProperty {
 		this.dailyRoomService = 0;
 		this.dailyLuxuryTax = 0;
 		this.propertyType = 0;
+		this.rooms = 0;
 		this.inputArray = propertyArray;
 	}
 
@@ -141,7 +143,7 @@ public class ExtractProperty {
 			this.rentPerDay = Integer.parseInt(this.inputArray[4]);
 			this.dailyLuxuryTax = Integer.parseInt(this.inputArray[3]);
 			this.dailyRoomService = Integer.parseInt(this.inputArray[2]);
-			this.beds = Integer.parseInt(this.inputArray[1]);
+			this.rooms = Integer.parseInt(this.inputArray[1]);
 		} else if (this.propertyType == 2){ //house
 			this.postalAddress = this.inputArray[6];
 			this.ownersName = this.inputArray[5];
@@ -199,8 +201,24 @@ public class ExtractProperty {
 		return myHouse;
 	}
 	
-	
-	
+	// createVilla()
+	public BnbVilla createVilla() {
+		
+		// create the shell
+		BnbVilla myVilla = new BnbVilla();
+		
+		// populate the shell
+		myVilla.setDailyLuxuryTax(this.dailyLuxuryTax);
+		myVilla.setDailyRoomService(this.dailyRoomService);
+		myVilla.setDaysRented(this.daysRented);
+		myVilla.setOwnersName(this.ownersName);
+		myVilla.setPostalAddress(this.postalAddress);
+		myVilla.setRentPerDay(this.rentPerDay);
+		myVilla.setRooms(this.rooms);
+		
+		// return
+		return myVilla;
+	}
 	
 	
 }

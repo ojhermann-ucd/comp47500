@@ -6,15 +6,17 @@ public class BnbVilla extends BnbProperty {
 	//______________________________________________________________________
 	private int dailyRoomService;
 	private int dailyLuxuryTax;
+	private int rooms;
 	
 	
 	// CONSTRUCTORS
 	//______________________________________________________________________
 	// specified constructor
-	public BnbVilla(String postalAddress, String ownersName, int rentPerDay, int daysRented, int dailyRoomService, int dailyLuxuryTax) {
+	public BnbVilla(String postalAddress, String ownersName, int rentPerDay, int daysRented, int dailyRoomService, int dailyLuxuryTax, int rooms) {
 		super(postalAddress, ownersName, rentPerDay, daysRented);
 		this.dailyRoomService = dailyRoomService;
 		this.dailyLuxuryTax = dailyLuxuryTax;
+		this.rooms = rooms;
 	}
 	
 	// empty constructor
@@ -22,6 +24,7 @@ public class BnbVilla extends BnbProperty {
 		super();
 		this.dailyRoomService = 0;
 		this.dailyLuxuryTax = 0;
+		this.rooms = 0;
 	}
 	
 	
@@ -37,17 +40,27 @@ public class BnbVilla extends BnbProperty {
 		this.dailyLuxuryTax = dailyLuxuryTax;
 	}
 	
+	// rooms
+	public void setRooms(int rooms) {
+		this.rooms = rooms;
+	}
+	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
 	// dailyRoomService
 	public int getDailyRoomService() {
-		return dailyRoomService;
+		return this.dailyRoomService;
 	}
 	
 	// dailyLuxuryTax
 	public int getDailyLuxuryTax() {
-		return dailyLuxuryTax;
+		return this.dailyLuxuryTax;
+	}
+	
+	// rooms
+	public int getRooms() {
+		return this.rooms;
 	}
 	
 	
