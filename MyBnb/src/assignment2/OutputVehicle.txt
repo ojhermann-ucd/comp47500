@@ -5,19 +5,19 @@ Vehicle Type: Car
 Vehicle Type: 1
 Register Number: 1
 Owner: Jeff
-Days Rented: 5
+Days Rented: 4
 Rent Per Day: 3
 Number of Passengers: 2
-Income: 15
+Income: 12
 
 Vehicle Type: Car
 Vehicle Type: 1
 Register Number: 2
 Owner: Sally
-Days Rented: 6
+Days Rented: 8
 Rent Per Day: 5
 Number of Passengers: 4
-Income: 30
+Income: 40
 
 TRUCKS
 ______________________________________________________________________
@@ -43,4 +43,4 @@ Income: -40
 INCOME
 ______________________________________________________________________
 
-Vehicle Income: -55
+Vehicle Income: -48
