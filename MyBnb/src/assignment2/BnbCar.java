@@ -46,9 +46,10 @@ public class BnbCar extends BnbVehicle {
 	public String toString() {
 		return
 				"Vehicle Type: Car" + "\n" +
-				"Vehicle Type: " + String.valueOf(this.getVehicleType()) +
+				"Vehicle Type: " + String.valueOf(this.getVehicleType()) + "\n" +
 				super.toString() +
-				"Number of Passengers: " + String.valueOf(this.getPassengerNumbers()) + "\n";
+				"Number of Passengers: " + String.valueOf(this.getPassengerNumbers()) + "\n" +
+				"Income: " + String.valueOf(this.income()) + "\n";
 	}
 	
 	// income()

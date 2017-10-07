@@ -2,33 +2,45 @@ CARS
 ______________________________________________________________________
 
 Vehicle Type: Car
-Vehicle Type: 1Register Number: 1
+Vehicle Type: 1
+Register Number: 1
 Owner: Jeff
-Days Rented: 4
+Days Rented: 5
 Rent Per Day: 3
 Number of Passengers: 2
+Income: 15
 
 Vehicle Type: Car
-Vehicle Type: 1Register Number: 2
+Vehicle Type: 1
+Register Number: 2
 Owner: Sally
-Days Rented: 8
+Days Rented: 6
 Rent Per Day: 5
 Number of Passengers: 4
+Income: 30
 
 TRUCKS
 ______________________________________________________________________
 
 Vehicle Type: Car
-Vehicle Type: 2Register Number: 3
+Vehicle Type: 2
+Register Number: 3
 Owner: Maersk
 Days Rented: 4
 Rent Per Day: 5
 Cargo Weight: 80
+Income: -60
 
 Vehicle Type: Car
-Vehicle Type: 2Register Number: 4
+Vehicle Type: 2
+Register Number: 4
 Owner: Maersk
 Days Rented: 4
 Rent Per Day: 5
 Cargo Weight: 60
+Income: -40
 
+INCOME
+______________________________________________________________________
+
+Vehicle Income: -55

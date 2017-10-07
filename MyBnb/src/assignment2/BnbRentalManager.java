@@ -170,6 +170,11 @@ public class BnbRentalManager {
 		for (int i = 0; i < villaList.size(); i++) {
 			stringOutputs.add(villaList.get(i).toString());
 		}
+		// income summary
+		stringOutputs.add("INCOME");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		stringOutputs.add("Property Income: " + String.valueOf(this.propertyIncome()));
 
 		Path file = Paths.get(propertyOutputFileName);
 		try {
@@ -312,6 +317,11 @@ public class BnbRentalManager {
 		for (int i = 0; i < truckList.size(); i++) {
 			stringOutputs.add(truckList.get(i).toString());
 		}
+		// income summary
+		stringOutputs.add("INCOME");
+		stringOutputs.add("______________________________________________________________________");
+		stringOutputs.add("");
+		stringOutputs.add("Vehicle Income: " + String.valueOf(this.vehicleIncome()));
 		
 		// write to file
 		Path file = Paths.get(vehicleOutputFileName);
@@ -416,6 +426,11 @@ public class BnbRentalManager {
 		// return
 		return vehicleIncome;
 		
+	}
+	
+	// totalIncome()
+	public int totalIncome() {
+		return this.propertyIncome() + this.vehicleIncome();
 	}
 	
 	

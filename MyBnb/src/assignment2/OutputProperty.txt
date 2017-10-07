@@ -106,3 +106,7 @@ Daily Room Service Fee: 20
 Daily Luxury Tax: 30
 Income: 0
 
+INCOME
+______________________________________________________________________
+
+Property Income: 200
