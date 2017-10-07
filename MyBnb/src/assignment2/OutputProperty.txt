@@ -2,6 +2,7 @@ APARTMENTS
 ______________________________________________________________________
 
 Property Type: Apartment
+Property Type: 1
 Register Number: 1
 Address: Paradise_3
 Owner: George
@@ -12,6 +13,7 @@ Beds: 2
 Income: 0
 
 Property Type: Apartment
+Property Type: 1
 Register Number: 2
 Address: Somewhere_4
 Owner: John
@@ -22,6 +24,7 @@ Beds: 3
 Income: 0
 
 Property Type: Apartment
+Property Type: 1
 Register Number: 3
 Address: Devil’s_place_3
 Owner: Jane
@@ -35,6 +38,7 @@ HOUSES
 ______________________________________________________________________
 
 Property Type: House
+Property Type: 2
 Register Number: 4
 Address: Paradise_13
 Owner: George
@@ -45,6 +49,7 @@ Clearing Fees: 50
 Income: 0
 
 Property Type: House
+Property Type: 2
 Register Number: 5
 Address: Somewhere_14
 Owner: John
@@ -55,6 +60,7 @@ Clearing Fees: 50
 Income: 0
 
 Property Type: House
+Property Type: 2
 Register Number: 6
 Address: Devil’s_place_13
 Owner: Jane
@@ -68,6 +74,7 @@ VILLAS
 ______________________________________________________________________
 
 Property Type: Villa
+Property Type: 3
 Register Number: 7
 Address: Paradise_23
 Owner: George
@@ -78,6 +85,7 @@ Daily Luxury Tax: 10
 Income: 0
 
 Property Type: Villa
+Property Type: 3
 Register Number: 8
 Address: Somewhere_24
 Owner: John
@@ -88,6 +96,7 @@ Daily Luxury Tax: 20
 Income: 0
 
 Property Type: Villa
+Property Type: 3
 Register Number: 9
 Address: Devil’s_place_23
 Owner: Jane

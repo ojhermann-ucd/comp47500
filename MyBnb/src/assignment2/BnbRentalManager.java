@@ -178,7 +178,6 @@ public class BnbRentalManager {
 		}
 		
 		
-		
 	}
 	
 	
@@ -189,32 +188,33 @@ public class BnbRentalManager {
 		// data field
 		int[] myArray = new int[2]; // first entry is property type, second is index in relevant array
 		
+		// apartment
 		for (int i = 0; i < apartmentList.size(); i++) {
 			if (apartmentList.get(i).getRegisterNumber() == possibleRegisterNumber) {
 				myArray[0] = 1;
 				myArray[1] = i;
 				return myArray;
 			}
-		} // end for
+		}
+		// house
 		for (int i = 0; i < houseList.size(); i++) {
 			if (houseList.get(i).getRegisterNumber() == possibleRegisterNumber) {
 				myArray[0] = 2;
 				myArray[1] = i;
 				return myArray;
 			}
-		} // end for
+		}
+		// villa
 		for (int i = 0; i < villaList.size(); i++) {
 			if (villaList.get(i).getRegisterNumber() == possibleRegisterNumber) {
 				myArray[0] = 3;
 				myArray[1] = i;
 				return myArray;
 			}
-		} // end for
-			// make the function happy i.e. it doesn't know the condition
+		}
+		// make the function happy i.e. it doesn't know the condition
 		return myArray;
 	}
-	
-	// find
 	
 	
 }

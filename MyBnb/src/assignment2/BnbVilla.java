@@ -71,6 +71,7 @@ public class BnbVilla extends BnbProperty {
 	public String toString() {
 		return
 				"Property Type: Villa" + "\n" +
+				"Property Type: " + String.valueOf(this.getPropertyType()) + "\n" +
 				super.toString() +
 				"Daily Room Service Fee: " + String.valueOf(this.getDailyRoomService()) + "\n" +
 				"Daily Luxury Tax: " + String.valueOf(this.getDailyLuxuryTax()) + "\n" +
