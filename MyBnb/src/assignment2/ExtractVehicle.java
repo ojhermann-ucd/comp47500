@@ -118,5 +118,28 @@ public class ExtractVehicle {
 		return false;
 	}
 	
+	// UPDATE
+	// ______________________________________________________________________
+	public void update() {
+		
+		// set propertyType
+		this.vehicleType = Integer.parseInt(this.inputArray[0]);
+		
+		// fill in the other values based on the propertyType
+		if (this.vehicleType == 1) { // car
+			this.owner = this.inputArray[4];
+			this.daysRented = Integer.parseInt(this.inputArray[3]);
+			this.rentPerDay = Integer.parseInt(this.inputArray[2]);
+			this.passengerNumbers = Integer.parseInt(this.inputArray[1]);
+			
+		} else { // truck
+			this.owner = this.inputArray[4];
+			this.daysRented = Integer.parseInt(this.inputArray[3]);
+			this.rentPerDay = Integer.parseInt(this.inputArray[2]);
+			this.cargoWeight = Integer.parseInt(this.inputArray[1]);
+		}
+		
+	}
+	
 
 }
