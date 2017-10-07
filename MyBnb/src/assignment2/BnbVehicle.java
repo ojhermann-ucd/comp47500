@@ -5,7 +5,7 @@ public class BnbVehicle implements BnbRentItem{
 	
 	// CLASS DATA FIELDS
 	//______________________________________________________________________
-	static int uniqueRegisterNumber = 0;
+	static int vehicleUniqueRegisterNumber = 0;
 	
 	
 	// OBJECT DATA FIELDS
@@ -22,11 +22,11 @@ public class BnbVehicle implements BnbRentItem{
 	// specified constructor
 	public BnbVehicle(String owner, int daysRented, int rentPerDay) {
 		
-		// increment uniqueRegisterNumber
-		uniqueRegisterNumber++;
+		// increment vehicleUniqueRegisterNumber
+		BnbVehicle.vehicleUniqueRegisterNumber++;
 		
 		// instantiate field values
-		this.registerNumber = uniqueRegisterNumber;
+		this.registerNumber = vehicleUniqueRegisterNumber;
 		this.owner = owner;
 		this.daysRented = daysRented;
 		this.rentPerDay = rentPerDay;
@@ -37,11 +37,11 @@ public class BnbVehicle implements BnbRentItem{
 	// empty constructor
 	public BnbVehicle() {
 		
-		// increment uniqueRegisterNumber
-		uniqueRegisterNumber++;
+		// increment vehicleUniqueRegisterNumber
+		vehicleUniqueRegisterNumber++;
 		
 		// instantiate field values
-		this.registerNumber = uniqueRegisterNumber;
+		this.registerNumber = vehicleUniqueRegisterNumber;
 		this.owner = null;
 		this.daysRented = 0;
 		this.rentPerDay = 0;
@@ -99,9 +99,9 @@ public class BnbVehicle implements BnbRentItem{
 		return this.vehicleType;
 	}
 	
-	// uniqueRegisterNumber
-	public static int getUniqueRegisterNumber() {
-		return uniqueRegisterNumber;
+	// vehicleUniqueRegisterNumber
+	public static int getVehicleUniqueRegisterNumber() {
+		return vehicleUniqueRegisterNumber;
 	}
 	
 	

@@ -92,7 +92,7 @@ public class ExtractVehicle {
 
 			// check 1 & 2
 			if (typeOfVehicle == 1 || typeOfVehicle == 2) {
-				for (int i = 0; i < 5; i++) {
+				for (int i = 0; i < 3; i++) {
 					// make sure the first five entries are int
 					if (!this.checkInt(this.inputArray[i])) {
 						return false;
@@ -103,13 +103,7 @@ public class ExtractVehicle {
 				return true;
 			// the only remaining possibility is a type 3 property
 			} else {
-				for (int i = 0; i < 6; i++) {
-					if (!this.checkInt(this.inputArray[i])) {
-						return false;
-					}
-				}
-				// return true if the first six are int
-				return true;
+				return false;
 			}
 
 		}

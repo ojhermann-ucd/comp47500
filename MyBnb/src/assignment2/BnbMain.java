@@ -11,6 +11,9 @@ public class BnbMain {
 		myRentalManager.readInputPropertyFile();
 		myRentalManager.giveRentalProperty();
 		myRentalManager.printAllProperties();
+		myRentalManager.readInputVehicleFile();
+		myRentalManager.fillInVehicles();
+		myRentalManager.printAllVehicles();
 
 	}
 

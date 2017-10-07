@@ -228,7 +228,7 @@ public class BnbRentalManager {
 		// check if the propertyID is valid
 		if (propertyID > 0 && propertyID < BnbProperty.getUniqueRegisterNumber() + 1) {
 			this.newRentalTransaction(propertyID, moreRentalDays);
-			JOptionPane.showMessageDialog(null, "Your entries have been processed.");
+			JOptionPane.showMessageDialog(null, "Your property entries have been processed.");
 		} else {
 			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid property ID.");
 		}
@@ -331,7 +331,7 @@ public class BnbRentalManager {
 	public void newVehicleTransaction(int vehicleID, int moreRentalDays) {
 
 		// check if valid propertyID
-		if (vehicleID > 0 && vehicleID < BnbVehicle.getUniqueRegisterNumber() + 1) {
+		if (vehicleID > 0 && vehicleID < BnbVehicle.getVehicleUniqueRegisterNumber() + 1) {
 			// car
 			for (int i = 0; i < carList.size(); i++) {
 				if (carList.get(i).getRegisterNumber() == vehicleID) {
@@ -361,9 +361,9 @@ public class BnbRentalManager {
 		int moreRentalDays = Integer.parseInt(moreRentalDaysString);
 		
 		// check if the propertyID is valid
-		if (vehicleID > 0 && vehicleID < BnbVehicle.getUniqueRegisterNumber() + 1) {
-			this.newRentalTransaction(vehicleID, moreRentalDays);
-			JOptionPane.showMessageDialog(null, "Your entries have been processed.");
+		if (vehicleID > 0 && vehicleID < BnbVehicle.getVehicleUniqueRegisterNumber() + 1) {
+			this.newVehicleTransaction(vehicleID, moreRentalDays);
+			JOptionPane.showMessageDialog(null, "Your vehicle entries have been processed.");
 		} else {
 			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid vehicle ID.");
 		}

@@ -25,7 +25,7 @@ public class BnbProperty implements BnbRentItem {
 	public BnbProperty(String postalAddress, String ownersName, int rentPerDay, int daysRented) {
 		
 		// increment uniqueRegisterNumber
-		uniqueRegisterNumber++;
+		BnbProperty.uniqueRegisterNumber++;
 		
 		// instantiate field values
 		this.registerNumber = uniqueRegisterNumber;

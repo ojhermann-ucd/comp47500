@@ -1,0 +1,34 @@
+CARS
+______________________________________________________________________
+
+Vehicle Type: Car
+Vehicle Type: 1Register Number: 1
+Owner: Jeff
+Days Rented: 4
+Rent Per Day: 3
+Number of Passengers: 2
+
+Vehicle Type: Car
+Vehicle Type: 1Register Number: 2
+Owner: Sally
+Days Rented: 8
+Rent Per Day: 5
+Number of Passengers: 4
+
+TRUCKS
+______________________________________________________________________
+
+Vehicle Type: Car
+Vehicle Type: 2Register Number: 3
+Owner: Maersk
+Days Rented: 4
+Rent Per Day: 5
+Cargo Weight: 80
+
+Vehicle Type: Car
+Vehicle Type: 2Register Number: 4
+Owner: Maersk
+Days Rented: 4
+Rent Per Day: 5
+Cargo Weight: 60
+
