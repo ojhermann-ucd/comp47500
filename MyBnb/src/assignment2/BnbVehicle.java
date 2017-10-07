@@ -14,6 +14,7 @@ public class BnbVehicle implements BnbRentItem{
 	private String owner;
 	private int daysRented;
 	private int rentPerDay;
+	private int vehicleType;
 	
 	
 	// CONSTRUCTORS
@@ -65,6 +66,11 @@ public class BnbVehicle implements BnbRentItem{
 		this.rentPerDay = rentPerDay;
 	}
 	
+	// vehicleType
+	public void setVehicleType(int vehicleType) {
+		this.vehicleType = vehicleType;
+	}
+	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
@@ -87,6 +93,17 @@ public class BnbVehicle implements BnbRentItem{
 	public int getrentPerDay() {
 		return this.rentPerDay;
 	}
+	
+	// propertyType
+	public int getVehicleType() {
+		return this.vehicleType;
+	}
+	
+	// uniqueRegisterNumber
+	public static int getUniqueRegisterNumber() {
+		return uniqueRegisterNumber;
+	}
+	
 	
 	// OTHER METHODS
 	//______________________________________________________________________	
