@@ -6,22 +6,22 @@ Property Type: 1
 Register Number: 1
 Address: Paradise_3
 Owner: George
-Days Rented: 0
+Days Rented: 2
 Rent Per Day: 50
 Stories: 1
 Beds: 2
-Income: 0
+Income: 200
 
 Property Type: Apartment
 Property Type: 1
 Register Number: 2
 Address: Somewhere_4
 Owner: John
-Days Rented: 0
+Days Rented: 3
 Rent Per Day: 50
 Stories: 2
 Beds: 3
-Income: 0
+Income: 900
 
 Property Type: Apartment
 Property Type: 1
@@ -42,11 +42,11 @@ Property Type: 2
 Register Number: 4
 Address: Paradise_13
 Owner: George
-Days Rented: 3
+Days Rented: 0
 Rent Per Day: 60
 Stories: 1
 Clearing Fees: 50
-Income: 330
+Income: 0
 
 Property Type: House
 Property Type: 2
@@ -109,4 +109,4 @@ Income: 0
 INCOME
 ______________________________________________________________________
 
-Property Income: 330
+Property Income: 1100

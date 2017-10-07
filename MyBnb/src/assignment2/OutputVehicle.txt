@@ -14,10 +14,10 @@ Vehicle Type: Car
 Vehicle Type: 1
 Register Number: 2
 Owner: Sally
-Days Rented: 8
+Days Rented: 6
 Rent Per Day: 5
 Number of Passengers: 4
-Income: 40
+Income: 30
 
 TRUCKS
 ______________________________________________________________________
@@ -43,4 +43,4 @@ Income: -40
 INCOME
 ______________________________________________________________________
 
-Vehicle Income: -48
+Vehicle Income: -58

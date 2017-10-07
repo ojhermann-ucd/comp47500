@@ -222,21 +222,33 @@ public class BnbRentalManager {
 	
 	// giveRentalProperty
 	public void giveRentalProperty() {
-		// user input
-		String propertyIDString = JOptionPane.showInputDialog("Enter the Register Number of the property");
-		String moreRentalDaysString = JOptionPane.showInputDialog("Enter the days involved in the rental transaction");
 		
-		// convert to integers
-		int propertyID = Integer.parseInt(propertyIDString);
-		int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+		// first input
+		String propertyModificationsString = JOptionPane.showInputDialog("How many property rental changes will you make?");
+		int propertyModification = Integer.parseInt(propertyModificationsString);
 		
-		// check if the propertyID is valid
-		if (propertyID > 0 && propertyID < BnbProperty.getUniqueRegisterNumber() + 1) {
-			this.newRentalTransaction(propertyID, moreRentalDays);
-			JOptionPane.showMessageDialog(null, "Your property entries have been processed.");
-		} else {
-			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid property ID.");
+		// loop the entires
+		for (int i = 0; i < propertyModification; i++) {
+			
+			// user input
+			String propertyIDString = JOptionPane.showInputDialog("Property entry " + String.valueOf(i + 1) + ".  Enter the Register Number.");
+			String moreRentalDaysString = JOptionPane.showInputDialog("Property entry " + String.valueOf(i + 1) + ".  Enter the days involved in the rental transaction.");
+			
+			// convert to integers
+			int propertyID = Integer.parseInt(propertyIDString);
+			int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+			
+			// check if the propertyID is valid
+			if (propertyID > 0 && propertyID < BnbProperty.getUniqueRegisterNumber() + 1) {
+				this.newRentalTransaction(propertyID, moreRentalDays);
+			} else {
+				JOptionPane.showMessageDialog(null, "It seems you did not enter a valid property ID.");
+			}
+	
 		}
+		
+		// exit message
+		JOptionPane.showMessageDialog(null, "Your property entries have been processed.");
 		
 	}
 	
@@ -362,21 +374,33 @@ public class BnbRentalManager {
 	
 	// fillInVehicles
 	public void fillInVehicles() {
-		// user input
-		String vehicleIDString = JOptionPane.showInputDialog("Enter the Register Number of the vehicle");
-		String moreRentalDaysString = JOptionPane.showInputDialog("Enter the days involved in the rental transaction");
 		
-		// convert to integers
-		int vehicleID = Integer.parseInt(vehicleIDString);
-		int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+		// first input
+		String vehicleModificationsString = JOptionPane.showInputDialog("How many vehicle rental changes will you make?");
+		int vehicleModification = Integer.parseInt(vehicleModificationsString);
 		
-		// check if the propertyID is valid
-		if (vehicleID > 0 && vehicleID < BnbVehicle.getVehicleUniqueRegisterNumber() + 1) {
-			this.newVehicleTransaction(vehicleID, moreRentalDays);
-			JOptionPane.showMessageDialog(null, "Your vehicle entries have been processed.");
-		} else {
-			JOptionPane.showMessageDialog(null, "It seems you did not enter a valid vehicle ID.");
+		// loop the entires
+		for (int i = 0; i < vehicleModification; i++) {
+			
+			// user input
+			String vehicleIDString = JOptionPane.showInputDialog("Vehicle entry " + String.valueOf(i + 1) + ".  Enter the Register Number.");
+			String moreRentalDaysString = JOptionPane.showInputDialog("Vehicle entry " + String.valueOf(i + 1) + ".  Enter the days involved in the rental transaction.");
+			
+			// convert to integers
+			int vehicleID = Integer.parseInt(vehicleIDString);
+			int moreRentalDays = Integer.parseInt(moreRentalDaysString);
+			
+			// check if the propertyID is valid
+			if (vehicleID > 0 && vehicleID < BnbVehicle.getVehicleUniqueRegisterNumber() + 1) {
+				this.newRentalTransaction(vehicleID, moreRentalDays);
+			} else {
+				JOptionPane.showMessageDialog(null, "It seems you did not enter a valid vehicle ID.");
+			}
+			
 		}
+		
+		// exit message
+		JOptionPane.showMessageDialog(null, "Your vehicle entries have been processed.");
 		
 	}
 	
