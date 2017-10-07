@@ -186,6 +186,7 @@ public class ExtractProperty {
 		myApartment.setPostalAddress(this.postalAddress);
 		myApartment.setRentPerDay(this.rentPerDay);
 		myApartment.setStories(this.stories);
+		myApartment.setPropetyType(this.propertyType);
 		
 		// return
 		return myApartment;
@@ -204,6 +205,7 @@ public class ExtractProperty {
 		myHouse.setPostalAddress(this.postalAddress);
 		myHouse.setRentPerDay(this.rentPerDay);
 		myHouse.setStories(this.stories);
+		myHouse.setPropetyType(this.propertyType);
 		
 		// return
 		return myHouse;
@@ -223,6 +225,7 @@ public class ExtractProperty {
 		myVilla.setPostalAddress(this.postalAddress);
 		myVilla.setRentPerDay(this.rentPerDay);
 		myVilla.setRooms(this.rooms);
+		myVilla.setPropetyType(this.propertyType);
 		
 		// return
 		return myVilla;

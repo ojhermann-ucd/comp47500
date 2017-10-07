@@ -16,6 +16,7 @@ public class BnbProperty implements BnbRentItem {
 	private String ownersName;
 	private int rentPerDay;
 	private int daysRented;
+	private int propertyType;
 	
 	
 	// CONSTRUCTORS
@@ -74,6 +75,11 @@ public class BnbProperty implements BnbRentItem {
 		this.daysRented = daysRented;
 	}
 	
+	//propertyType
+	public void setPropetyType(int propertyType) {
+		this.propertyType = propertyType;
+	}
+	
 	
 	// GETTER METHODS
 	//______________________________________________________________________
@@ -100,6 +106,11 @@ public class BnbProperty implements BnbRentItem {
 	// registerNumber
 	public int getRegisterNumber() {
 		return this.registerNumber;
+	}
+	
+	// propertyType
+	public int getPropertyType() {
+		return this.propertyType;
 	}
 	
 	

@@ -182,26 +182,39 @@ public class BnbRentalManager {
 	}
 	
 	
-	// FIND PROPERTY INDEX BY ID
-	public int findPropertyIndex(int possibleRegisterNumber) {
+	// FIND PROPERTY BY ID
+	// findPropertyLocation
+	public int[] findPropertyLocation(int possibleRegisterNumber) {
+		
+		// data field
+		int[] myArray = new int[2]; // first entry is property type, second is index in relevant array
+		
 		for (int i = 0; i < apartmentList.size(); i++) {
 			if (apartmentList.get(i).getRegisterNumber() == possibleRegisterNumber) {
-				return i;
+				myArray[0] = 1;
+				myArray[1] = i;
+				return myArray;
 			}
 		} // end for
 		for (int i = 0; i < houseList.size(); i++) {
 			if (houseList.get(i).getRegisterNumber() == possibleRegisterNumber) {
-				return i;
+				myArray[0] = 2;
+				myArray[1] = i;
+				return myArray;
 			}
 		} // end for
 		for (int i = 0; i < villaList.size(); i++) {
 			if (villaList.get(i).getRegisterNumber() == possibleRegisterNumber) {
-				return i;
+				myArray[0] = 3;
+				myArray[1] = i;
+				return myArray;
 			}
 		} // end for
 			// make the function happy i.e. it doesn't know the condition
-		return -1;
+		return myArray;
 	}
+	
+	// find
 	
 	
 }
