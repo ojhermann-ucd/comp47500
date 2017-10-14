@@ -1,8 +1,8 @@
 package partB;
 
 
-import java.util.Arrays;
 //IMPORTS
+import java.util.Arrays;
 import java.util.Random;
 
 
