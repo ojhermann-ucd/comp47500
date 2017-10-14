@@ -4,6 +4,7 @@ public class B1 {
 	
 	// MAIN
 	public static void main(String[] args) {
+		// five examples of Increment
 		for (int k = 1; k < 6; k++) {
 			Increment(k);
 		}
