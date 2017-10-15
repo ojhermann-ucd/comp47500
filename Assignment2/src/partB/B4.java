@@ -4,6 +4,7 @@ package partB;
 // IMPORTS
 import java.util.Random;
 
+
 public class B4 {
 	
 	// MAIN
