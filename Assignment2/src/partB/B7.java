@@ -1,7 +1,6 @@
 package partB;
 
 
-import java.lang.reflect.Array;
 //IMPORTS
 import java.util.Arrays;
 import java.util.Random;
