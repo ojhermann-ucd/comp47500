@@ -10,6 +10,9 @@ public class B4 {
 	// MAIN
 	public static void main (String[] args) {
 		
+		System.out.println("B4: Difference");
+		System.out.println("");
+		
 		// random number rn
 		Random rn = new Random();
 		

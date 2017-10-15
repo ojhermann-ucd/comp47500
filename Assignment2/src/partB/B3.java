@@ -10,6 +10,9 @@ public class B3 {
 	// MAIN
 	public static void main (String[] args) {
 		
+		System.out.println("B3: MaxInt");
+		System.out.println("");
+		
 		// random number: rn
 		Random rn = new Random();
 		
