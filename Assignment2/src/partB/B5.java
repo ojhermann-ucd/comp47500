@@ -28,15 +28,33 @@ public class B5 {
 		}
 		
 		// minValue
+
+		System.out.println("INPUTS");
+		System.out.println("arrayA is " + Arrays.toString(arrayA));
+		System.out.println("n is " + String.valueOf(n));
+		System.out.println("");
+		
 		int minValue = arrayA[0];
-		for (int k = 0; k < n; k++) {
+
+		System.out.println("ALGORITHM");
+		System.out.println("minValue = arrayA[0] = " + String.valueOf(arrayA[0]));
+
+		for (int k = 1; k < n; k++) {
 			if (minValue > arrayA[k]) {
+				String bigMessage = "minValue = " + String.valueOf(minValue) + " > "+ String.valueOf(arrayA[k]) + " = array[" + String.valueOf(k) + "], so minValue <-- " + String.valueOf(arrayA[k]);
+				System.out.println(bigMessage);
 				minValue = arrayA[k];
+			} else {
+				String smallMessage = "minValue = " + String.valueOf(minValue) + " < " + String.valueOf(arrayA[k]) + " = array[" + String.valueOf(k) + "]" ;
+				System.out.println(smallMessage);
 			}
+			
 		}
 		
 		// message to grader
-		String outputMessage = "The output of MinValue(" + Arrays.toString(arrayA) + ", " + String.valueOf(n) +") is ";
+		System.out.println("");
+		System.out.println("SUMMARY");
+		String outputMessage = "MinValue(" + Arrays.toString(arrayA) + ", " + String.valueOf(n) +") = ";
 		System.out.print(outputMessage);
 		System.out.println(String.valueOf(minValue));
 		
