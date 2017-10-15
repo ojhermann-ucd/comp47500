@@ -10,6 +10,9 @@ public class B9 {
 	// MAIN
 	public static void main (String[] args) {
 		
+		System.out.println("B9: Power");
+		System.out.println("");
+		
 		// random number rn
 		Random rn = new Random();
 		
@@ -24,10 +27,10 @@ public class B9 {
 	}
 	
 	// POWER
-	public static int Power(int a, int b) {
+	public static long Power(long a, long b) {
 		
 		// power
-		int power = 1;
+		long power = 1;
 		for (int k = 1; k < b + 1; k++) {
 			power *= a;
 		}

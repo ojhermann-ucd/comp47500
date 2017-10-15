@@ -10,6 +10,9 @@ public class B8 {
 	// MAIN
 	public static void main (String[] args) {
 		
+		System.out.println("B8: Factorial");
+		System.out.println("");
+		
 		// random number rn
 		Random rn = new Random();
 		
