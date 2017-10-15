@@ -42,7 +42,7 @@ public class B7 {
 		System.out.println("");
 		System.out.println("Algorithm");
 		double[] arrayX = new double[n];
-		System.out.println("Instantiate arrayX: " + Arrays.toString(arrayX));
+		System.out.println(Arrays.toString(arrayX) + " <-- arrayX");
 		double runningSum = 0;
 		System.out.println("runningSum <-- 0");
 		System.out.println("");

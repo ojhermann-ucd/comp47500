@@ -12,7 +12,7 @@ public class B3 {
 		
 		System.out.println("B3: MaxInt");
 		System.out.println("");
-		System.out.println("Here are five examples of Average(int a, int b) with random a and b");
+		System.out.println("Here are five examples of MaxInt(int a, int b) with random a and b");
 		System.out.println("");
 		System.out.println("");
 		
