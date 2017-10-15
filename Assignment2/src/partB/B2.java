@@ -46,7 +46,7 @@ public class B2 {
 		//averageOutput
 		double averageOutput = ((double)a + (double)b) / 2.0;
 		System.out.println("Algorithm");
-		String outputMessage1 = "output = (a + b) / 2 = (" + String.valueOf(a) + " + " + String.valueOf(b) + ") / 2";
+		String outputMessage1 = "output <-- (a + b) / 2 = (" + String.valueOf(a) + " + " + String.valueOf(b) + ") / 2";
 		System.out.println(outputMessage1);
 		System.out.println("");
 		
