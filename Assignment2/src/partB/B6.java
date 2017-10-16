@@ -46,11 +46,11 @@ public class B6 {
 		System.out.println("minValueIndex <-- 0");
 		for (int k = 1; k < n; k++) {
 			if (arrayA[minValueIndex] > arrayA[k]) {
-				String bigMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " > " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "], so minValueIndex <--" + String.valueOf(k);
+				String bigMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " > " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "], so minValueIndex <-- " + String.valueOf(k);
 				System.out.println(bigMessage);
 				minValueIndex = k;
 			} else {
-				String smallMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " < " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "]";
+				String smallMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " \u226F " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "]";
 				System.out.println(smallMessage);
 			}
 		}

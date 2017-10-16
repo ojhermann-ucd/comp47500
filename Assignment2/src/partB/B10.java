@@ -69,7 +69,8 @@ public class B10 {
 		} else {
 			System.out.println(String.format("Check that index < n: %d < %d", index, sizeN));
 			System.out.println(String.format("Find that A[index] = q: %d = %d", arrayA[index], q));
-			System.out.println("return index");
+			System.out.println("");
+			System.out.println(String.format("return index = %d", index));
 			System.out.println("");
 			
 			// message to grader

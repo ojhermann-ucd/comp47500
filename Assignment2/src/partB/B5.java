@@ -53,7 +53,7 @@ public class B5 {
 				System.out.println(bigMessage);
 				minValue = arrayA[k];
 			} else {
-				String smallMessage = "minValue = " + String.valueOf(minValue) + " < " + String.valueOf(arrayA[k]) + " = array[" + String.valueOf(k) + "]" ;
+				String smallMessage = "minValue = " + String.valueOf(minValue) + " \u226F " + String.valueOf(arrayA[k]) + " = array[" + String.valueOf(k) + "]" ;
 				System.out.println(smallMessage);
 			}
 			

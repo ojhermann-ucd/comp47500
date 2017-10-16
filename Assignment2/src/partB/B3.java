@@ -53,11 +53,8 @@ public class B3 {
 		if (a > b) {
 			String algoMessage1 = String.format("%d > %d, so MaxInt(%d, %d) returns %d", a, b, a, b, a);
 			System.out.println(algoMessage1);
-		} else if (a == b) {
-			String algoMessage3 = String.format("%d = %d, so MaxInt(%d, %d) returns %d", a, b, a, b, b);
-			System.out.println(algoMessage3);
 		} else {
-			String algoMessage2 = String.format("%d < %d, so MaxInt(%d, %d) returns %d", a, b, a, b, b);
+			String algoMessage2 = String.format("%d \u226F %d, so MaxInt(%d, %d) returns %d", a, b, a, b, b);
 			System.out.println(algoMessage2);
 		}
 		System.out.println("");

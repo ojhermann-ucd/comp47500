@@ -53,8 +53,8 @@ public class B4 {
 		if (a > b) {
 			System.out.println(String.format("%d > %d, so return %d - %d", a, b, a, b));
 		} else {
-			System.out.println(String.format("%d < %d, so return %d - %d", a, b, b, a));
-		}
+			System.out.println(String.format("%d \u226F %d, so return %d - %d", a, b, b, a));
+		} 
 		System.out.println("");
 		
 		// message to grader

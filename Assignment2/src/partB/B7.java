@@ -50,10 +50,9 @@ public class B7 {
 			String runningSumMessage = "runningSum <-- runningSum + " + "arrayA[" + String.valueOf(k) + "] = " + String.valueOf(runningSum) + " + " + String.valueOf(arrayA[k]) + " = " + String.valueOf(runningSum + arrayA[k]);
 			runningSum += arrayA[k];
 			arrayX[k] = runningSum / (k + 1);
-			String arrayXMessage = "arrayX[" + String.valueOf(k) + "] <-- " + String.valueOf(arrayX[k]) + " = " + String.valueOf(runningSum) + " / " + String.valueOf(k + 1) + " = runningSum / k + 1";
+			String arrayXMessage = "arrayX[" + String.valueOf(k) + "] <-- " + String.valueOf(arrayX[k]) + " = " + String.valueOf(runningSum) + " / " + String.valueOf(k + 1) + " = runningSum / k + 1 i.e. arrayX <-- " + Arrays.toString(arrayX);
 			System.out.println(runningSumMessage);
 			System.out.println(arrayXMessage);
-			System.out.println("arrayX <-- " + Arrays.toString(arrayX));
 			System.out.println("");
 		}
 		
