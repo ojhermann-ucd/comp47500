@@ -53,24 +53,24 @@ public class B10 {
 		System.out.println("index <-- 0");
 		System.out.println("");
 		while (index < sizeN && arrayA[index] != q) {
-			System.out.println(String.format("See that index = %d < %d = n and that A[index] = %d <> %d = q", index, sizeN, arrayA[index], q));
-//			System.out.println(String.format("Check that A[index] != q: %d != %d", arrayA[index], q));
+			System.out.println(String.format("index = %d < %d = n and A[index] = %d <> %d = q", index, sizeN, arrayA[index], q));
 			index += 1;
-			System.out.println(String.format("index <-- index + 1 = %d + 1 = %d", index-1, index));
+			System.out.println(String.format("  index <-- index + 1 = %d + 1 = %d", index-1, index));
 			System.out.println("");
 		}
 		if (index == sizeN) { // comparing primitives, so == is fine
-			System.out.println("index == n, so return -1");
+			System.out.println(String.format("index = %d = n", sizeN));
+			System.out.println("  return -1");
 			System.out.println("");
 			System.out.println("Summary");
 			String outputMessage = "LinearSearch(" + Arrays.toString(arrayA) + ", " + String.valueOf(sizeN)  + ", " + String.valueOf(q) + ") = -1";
 			System.out.print(outputMessage);
 			return -1;
 		} else {
-			System.out.println(String.format("Check that index < n: %d < %d", index, sizeN));
-			System.out.println(String.format("Find that A[index] = q: %d = %d", arrayA[index], q));
+			System.out.println(String.format("index = %d < %d = n and A[index] = %d == %d = q", index, sizeN, arrayA[index], q));
 			System.out.println("");
-			System.out.println(String.format("return index = %d", index));
+			System.out.println(String.format("index = %d <> %d = n", index, sizeN));
+			System.out.println(String.format("  return index = %d", index));
 			System.out.println("");
 			
 			// message to grader
