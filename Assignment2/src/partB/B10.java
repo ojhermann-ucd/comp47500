@@ -53,8 +53,8 @@ public class B10 {
 		System.out.println("index <-- 0");
 		System.out.println("");
 		while (index < sizeN && arrayA[index] != q) {
-			System.out.println(String.format("Check that index < n: %d < %d", index, sizeN));
-			System.out.println(String.format("Check that A[index] != q: %d != %d", arrayA[index], q));
+			System.out.println(String.format("See that index = %d < %d = n and that A[index] = %d <> %d = q", index, sizeN, arrayA[index], q));
+//			System.out.println(String.format("Check that A[index] != q: %d != %d", arrayA[index], q));
 			index += 1;
 			System.out.println(String.format("index <-- index + 1 = %d + 1 = %d", index-1, index));
 			System.out.println("");
