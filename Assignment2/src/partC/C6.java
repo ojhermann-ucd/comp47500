@@ -20,7 +20,6 @@ public class C6 {
 				int[] arrayA = new int[n];
 				double outPut = MinValueIndexTest(arrayA, n);
 				averageTime += outPut;
-//				System.out.println(String.format("n = %d, iteration %d, run time = %f", n, j, outPut));
 			}
 			averageTime /= iterValue;
 			System.out.println(String.format("Average run time for n = %d: %f", n, averageTime));
