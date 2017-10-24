@@ -36,10 +36,8 @@ public class B4 {
 		
 		// inputs
 		System.out.println("Input");
-		String inputMessage1 = String.format("int a = %2d", a);
-		String inputMessage2 = String.format("int b = %2d", b);
-		System.out.println(inputMessage1);
-		System.out.println(inputMessage2);
+		System.out.println(String.format("int a = %2d", a));
+		System.out.println(String.format("int b = %2d", b));
 		System.out.println("");
 		
 		// differenceOutput
@@ -51,9 +49,11 @@ public class B4 {
 		}
 		System.out.println("Algorithm");
 		if (a > b) {
-			System.out.println(String.format("%d > %d, so return %d - %d", a, b, a, b));
+			System.out.println(String.format("a = %d > %d = b", a, b));
+			System.out.println(String.format("  return %d - %d = %d", a, b, differenceOutput));
 		} else {
-			System.out.println(String.format("%d \u226F %d, so return %d - %d", a, b, b, a));
+			System.out.println(String.format("%d \u226F %d", a, b));
+			System.out.println(String.format("  return %d - %d = %d", b, a, differenceOutput));
 		} 
 		System.out.println("");
 		

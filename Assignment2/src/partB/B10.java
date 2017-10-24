@@ -25,7 +25,7 @@ public class B10 {
 	// LINEARSEARCH
 	public static int LinearSearch(int[] arrayA, int sizeN, int q) {
 		
-		System.out.println("B6: MinValueIndex");
+		System.out.println("B10: LinearSearch");
 		System.out.println("");
 		
 		System.out.println("Note to Grader");
