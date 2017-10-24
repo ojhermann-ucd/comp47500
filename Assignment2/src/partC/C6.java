@@ -10,17 +10,19 @@ public class C6 {
 	public static void main (String[] args) {
 		// nValues
 		int[] nValues = {100000, 200000, 500000, 1000000, 2000000};
+		// iterValue
+		int iterValue = 300;
 		
 		// run tests
 		for (int n: nValues) {
 			double averageTime = 0;
-			for (int j = 0; j < 5; j++) {
+			for (int j = 0; j < iterValue; j++) {
 				int[] arrayA = new int[n];
 				double outPut = MinValueIndexTest(arrayA, n);
 				averageTime += outPut;
-				System.out.println(String.format("n = %d, iteration %d, run time = %f", n, j, outPut));
+//				System.out.println(String.format("n = %d, iteration %d, run time = %f", n, j, outPut));
 			}
-			averageTime /= 5;
+			averageTime /= iterValue;
 			System.out.println(String.format("Average run time for n = %d: %f", n, averageTime));
 			System.out.println("");
 		}
