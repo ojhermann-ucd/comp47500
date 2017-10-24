@@ -46,14 +46,15 @@ public class B6 {
 		System.out.println("minValueIndex <-- 0");
 		for (int k = 1; k < n; k++) {
 			if (arrayA[minValueIndex] > arrayA[k]) {
-				String bigMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " > " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "], so minValueIndex <-- " + String.valueOf(k);
-				System.out.println(bigMessage);
+				System.out.println(String.format("arrayA[minValueIndex] = %d > %d = arrayA[%d]", arrayA[minValueIndex], arrayA[k], k));
+				System.out.println(String.format("  minValueIndex <-- k = %d", k));
 				minValueIndex = k;
 			} else {
-				String smallMessage = "arrayA[minValueIndex] = " + String.valueOf(arrayA[minValueIndex]) + " \u226F " + String.valueOf(arrayA[k]) + " = arrayA[" + String.valueOf(k) + "]";
-				System.out.println(smallMessage);
+				System.out.println(String.format("arrayA[minValueIndex] = %d \u226F %d = arrayA[%d]", arrayA[minValueIndex], arrayA[k], k));
 			}
 		}
+		System.out.println("");
+		System.out.println(String.format("return minValueIndex = %d", minValueIndex));
 		
 		// message to grader
 		String outputMessage = "MinValueIndex(" + Arrays.toString(arrayA) + ", " + String.valueOf(n) +") = ";
