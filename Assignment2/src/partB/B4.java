@@ -52,7 +52,7 @@ public class B4 {
 			System.out.println(String.format("a = %d > %d = b", a, b));
 			System.out.println(String.format("  return %d - %d = %d", a, b, differenceOutput));
 		} else {
-			System.out.println(String.format("%d \u226F %d", a, b));
+			System.out.println(String.format("a = %d \u226F %d = b", a, b));
 			System.out.println(String.format("  return %d - %d = %d", b, a, differenceOutput));
 		} 
 		System.out.println("");

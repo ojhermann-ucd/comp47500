@@ -37,7 +37,7 @@ public class C10 {
 
 		// arrayA
 		for (int k = 0; k < n; k++) {
-			arrayA[k] = rn.nextInt(10) + 1;
+			arrayA[k] = rn.nextInt(2000000) + 1;
 		}
 
 		// LinearSearch
