@@ -1,5 +1,4 @@
 // IMPORTS
-import java.lang.reflect.Array;
 
 public class ArrayStack<E> implements Stack<E> {
 	
@@ -46,7 +45,27 @@ public class ArrayStack<E> implements Stack<E> {
 		if (this.size() == this.capacity) {
 			throw new FullStackException(this.size());
 		} else {
-			this.stack[++this.top] = element; // pre-increment top and update the stack
+			this.stack[++this.top] = element; // update top and then update the stack
+		}
+	}
+	
+	public E top() throws EmptyStackException {
+		// returns the top item of the stack or throws an exception if the stack is empty
+		if (this.isEmpty()) {
+			throw new EmptyStackException(this.size());
+		} else {
+			return this.stack[this.top]; // returns the top of the stack
+		}
+	}
+	
+	public E pop() throws EmptyStackException {
+		// pops the top of the stack or thows an execption if the stack is empty
+		if (this.isEmpty()) {
+			throw new EmptyStackException(this.size());
+		} else {
+			E returnObject = this.top(); // create the return object
+			this.stack[this.top--] = null; // assign null to the former top index and post-decrement top 
+			return returnObject; 
 		}
 	}
 
