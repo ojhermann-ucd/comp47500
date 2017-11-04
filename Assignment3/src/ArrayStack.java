@@ -32,16 +32,19 @@ public class ArrayStack<E> implements Stack<E> {
 	
 	// METHODS
 	//______________________________________________________________________
+	// size()
 	public int size() {
 		// returns number of items in the stack
 		return this.top + 1;
 	}
 	
+	// isEmpty()
 	public boolean isEmpty() {
 		// returns true if the stack is empty
 		return this.size() == 0;
 	}
 	
+	// push()
 	public void push (E element) throws FullStackException {
 		// adds item to the stack or throws exception if the stack is full
 		if (this.size() == this.capacity) {
@@ -51,6 +54,7 @@ public class ArrayStack<E> implements Stack<E> {
 		}
 	}
 	
+	// top()
 	public E top() throws EmptyStackException {
 		// returns the top item of the stack or throws an exception if the stack is empty
 		if (this.isEmpty()) {
@@ -60,6 +64,7 @@ public class ArrayStack<E> implements Stack<E> {
 		}
 	}
 	
+	// pop()
 	public E pop() throws EmptyStackException {
 		// pops the top of the stack or thows an execption if the stack is empty
 		if (this.isEmpty()) {
@@ -69,6 +74,17 @@ public class ArrayStack<E> implements Stack<E> {
 			this.stack[this.top--] = null; // assign null to the former top index and post-decrement top 
 			return returnObject; 
 		}
+	}
+	
+	//toString()
+	@Override
+	public String toString() {
+		// returns a string representation of the size of the array and its contents
+		String stringRepresentation = String.format("%d",this.size()) + "\t";
+		for (int j = 0; j < this.size() - 1; j++) {
+			stringRepresentation += this.stack[j].toString() + " ";
+		}
+		return stringRepresentation;
 	}
 
 }
