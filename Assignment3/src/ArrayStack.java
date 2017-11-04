@@ -81,10 +81,13 @@ public class ArrayStack<E> implements Stack<E> {
 	@Override
 	public String toString() {
 		// returns a string representation of the size of the array and its contents
-		String stringRepresentation = String.format("Size: %d",this.size()) + "\t" + "Stack:";
+		String stackString = "";
+		String indexString = "";
 		for (int j = 0; j < this.size(); j++) {
-			stringRepresentation += this.stack[j].toString() + " ";
+			stackString += this.stack[j].toString() + "\t";
+			indexString += String.valueOf(j) + "\t";
 		}
+		String stringRepresentation = "Stack Summary\n" + String.format("Size:\t%d\n",this.size()) + "Stack:\t" + stackString + "\n" + "Index:\t" + indexString + "\n";
 		return stringRepresentation;
 	}
 
