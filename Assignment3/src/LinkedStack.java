@@ -107,4 +107,18 @@ public class LinkedStack<E> implements Stack<E> {
 		}
 	}
 
+	// toString()
+	@Override
+	public String toString() {
+		// returns a string representation of the size of the array and its
+		// contents
+		String stringRepresentation = String.format("Size: %d", this.size()) + "\t" + "Stack:";
+		Node node = this.top;
+		while (node != null) {
+			stringRepresentation += node.getElement().toString() + " ";
+			node = node.getNext();
+		}
+		return stringRepresentation;
+	}
+
 }
