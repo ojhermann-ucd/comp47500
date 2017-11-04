@@ -1,7 +1,6 @@
 
 public class LinkedStack<E> implements Stack<E> {
 
-	
 	// NESTED CLASS: NODE
 	// ______________________________________________________________________
 	public class Node<E> {
@@ -50,13 +49,11 @@ public class LinkedStack<E> implements Stack<E> {
 
 	}
 
-	
 	// OBJECT FIELDS
 	// ______________________________________________________________________
 	private Node<E> top;
 	private int size;
-	
-	
+
 	// CONSTRUCTORS
 	// ______________________________________________________________________
 	// no argument
@@ -64,9 +61,50 @@ public class LinkedStack<E> implements Stack<E> {
 		this.top = null;
 		this.size = 0;
 	}
-	
-	
-	
-	
-	
+
+	// METHODS
+	// ______________________________________________________________________
+	// size()
+	public int size() {
+		return this.size;
+	}
+
+	// isEmpty()
+	public boolean isEmpty() {
+		return this.size() == 0;
+	}
+
+	// top()
+	public E top() throws EmptyStackException {
+		if (this.isEmpty()) {
+			throw new EmptyStackException(this.size);
+		} else {
+			return this.top.getElement();
+		}
+	}
+
+	// push()
+	public void push(E element) {
+		// create the new node
+		Node<E> node = new Node<E>(element, null);
+		// set next to top
+		node.setNext(this.top);
+		// set top to node
+		this.top = node;
+		// increse size
+		this.size++;
+	}
+
+	// pop()
+	public E pop() throws EmptyStackException {
+		if (this.isEmpty()) {
+			throw new EmptyStackException(this.size);
+		} else {
+			E returnElement = this.top();
+			this.top = this.top.getNext();
+			this.size--;
+			return returnElement;
+		}
+	}
+
 }
