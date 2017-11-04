@@ -66,7 +66,7 @@ public class ArrayStack<E> implements Stack<E> {
 	
 	// pop()
 	public E pop() throws EmptyStackException {
-		// pops the top of the stack or thows an execption if the stack is empty
+		// pops the top of the stack or throws an exception if the stack is empty
 		if (this.isEmpty()) {
 			throw new EmptyStackException(this.size());
 		} else {
