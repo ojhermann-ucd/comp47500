@@ -1,4 +1,4 @@
 
-public class EmptyStackException extends RuntimeException {
+public class EmptyStackException extends Exception {
 	
 }
