@@ -1,5 +1,6 @@
 // IMPORTS
 
+
 public class ArrayStack<E> implements Stack<E> {
 	
 	
@@ -80,8 +81,8 @@ public class ArrayStack<E> implements Stack<E> {
 	@Override
 	public String toString() {
 		// returns a string representation of the size of the array and its contents
-		String stringRepresentation = String.format("%d",this.size()) + "\t";
-		for (int j = 0; j < this.size() - 1; j++) {
+		String stringRepresentation = String.format("Size: %d",this.size()) + "\t" + "Stack:";
+		for (int j = 0; j < this.size(); j++) {
 			stringRepresentation += this.stack[j].toString() + " ";
 		}
 		return stringRepresentation;
