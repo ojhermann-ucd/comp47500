@@ -83,12 +83,22 @@ public class ArrayStack<E> implements Stack<E> {
 		// contents
 		String stackString = "";
 		String indexString = "";
+		// populate stackString
 		for (int j = 0; j < this.size(); j++) {
-			stackString += this.stack[j].toString() + "\t";
-			indexString += String.valueOf(j) + "\t";
+			stackString += String.format("%-10s", this.stack[j].toString());
 		}
-		String stringRepresentation = "Stack Summary\n" + String.format("Size:\t%d\n", this.size()) + "Stack:\t"
-				+ stackString + "\n" + "Index:\t" + indexString + "\n";
+		for (int j = this.size(); j < this.capacity; j++) {
+			stackString += String.format("%-10s", "null");
+		}
+		// populate indexString
+		for (int j = 0; j < this.capacity; j++) {
+			indexString += String.format("%-10d", j);
+		}
+		String stringRepresentation = 
+				String.format("Size: %d, Top Index: %d, Capacity: %d\n", this.size(), this.top, this.capacity)
+				+ "Stack:\t"
+				+ stackString + "\n" 
+				+ "Index:\t" + indexString + "\n";
 		return stringRepresentation;
 	}
 
