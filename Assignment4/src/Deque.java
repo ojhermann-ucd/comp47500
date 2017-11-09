@@ -28,7 +28,9 @@ public interface Deque<E> {
 	// returns the first item of the Deque
 	public E front() throws EmptyDequeException;
 	
-	// returns the last item of teh Deque
+	// returns the last item of the Deque
 	public E rear() throws EmptyDequeException;
+	
+	public String toString();
 
 }
