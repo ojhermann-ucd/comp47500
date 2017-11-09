@@ -31,11 +31,10 @@ public class ArrayQueue<E> implements Queue<E> {
 	// ______________________________________________________
 	// enqueue()
 	public void enqueue(E element) throws FullQueueException {
-		if (this.size() == this.capacity) {
+		if (this.isFull()) {
 			throw new FullQueueException();
 		} else {
-			this.queue[this.rear] = element;
-			this.rear = ++this.rear % this.capacity;
+			this.queue[++this.rear % this.capacity] = element;
 		}
 	}
 	
@@ -45,7 +44,7 @@ public class ArrayQueue<E> implements Queue<E> {
 			throw new EmptyQueueException();
 		} else {
 			E returnE = this.queue[this.front];
-			this.queue[front] = null;
+			this.queue[this.front] = null;
 			this.front = ++this.front % this.capacity;
 			return returnE;
 		}
@@ -53,9 +52,17 @@ public class ArrayQueue<E> implements Queue<E> {
 
 	// SUPPORTING OPERATIONS
 	// ______________________________________________________
-	public int size();
+	public int size() {
+		return (this.capacity + this.rear - this.front + 1) % this.capacity;
+	}
 
-	public boolean isEmpty();
+	public boolean isEmpty() {
+		return this.rear == this.front;
+	}
+	
+	public boolean isFull() {
+		return this.size() == this.capacity;
+	}
 
 	public E front() throws EmptyQueueException;
 
