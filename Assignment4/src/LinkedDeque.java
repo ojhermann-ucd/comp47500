@@ -76,20 +76,36 @@ public class LinkedDeque<E> implements Deque<E> {
 
 	// CORE OPERATIONS
 	// ______________________________________________________________________
+	// emptyInsertion()
+	public void emptyInsertion(E element) {
+		DLNode<E> node = new DLNode(element, this.front, this.rear);
+		this.front.setNext(node);
+		this.rear.setPrev(node);
+		this.size++;
+	}
+
 	// insertFirst()
 	public void insertFirst(E element) {
 		if (this.front.getNext() == rear) {
-			DLNode<E> node = new DLNode(element, this.front, this.rear);
-			this.front.setNext(node);
-			this.rear.setPrev(node);
-			this.size++;
+			this.emptyInsertion(element);
 		} else {
 			DLNode<E> node = new DLNode(element, this.front, this.front.getNext());
 			this.front.getNext().setPrev(node);
 			this.front.setNext(node);
 			this.size++;
 		}
+	}
 
+	// insertLast()
+	public void insertLast(E element) {
+		if (this.rear.getPrev() == this.front) {
+			this.emptyInsertion(element);
+		} else {
+			DLNode<E> node = new DLNode(element, this.rear.getPrev(),this.rear);
+			this.rear.getPrev().setNext(node);
+			this.rear.setPrev(node);
+			this.size++;
+		}
 	}
 
 }
