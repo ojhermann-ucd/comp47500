@@ -34,8 +34,8 @@ public class ArrayQueue<E> implements Queue<E> {
 		if (this.isFull()) {
 			throw new FullQueueException();
 		} else {
-			this.rear = ++this.rear % this.capacity;
-			this.queue[this.rear] = element;
+			this.rear = ++this.rear % this.capacity; // pre-increment the index and convert to an appropriate figure
+			this.queue[this.rear] = element; // put the element into the array
 		}
 	}
 	
@@ -44,10 +44,10 @@ public class ArrayQueue<E> implements Queue<E> {
 		if (this.isEmpty()) {
 			throw new EmptyQueueException();
 		} else {
-			E returnE = this.queue[this.front];
-			this.queue[this.front] = null;
-			this.front = ++this.front % this.capacity;
-			return returnE;
+			E returnE = this.queue[this.front]; // obtain the desired object
+			this.queue[this.front] = null; // clear out the existing entry
+			this.front = ++this.front % this.capacity; // pre-increment the index and convert to an appropriate figure
+			return returnE; // return the object
 		}
 	}
 
