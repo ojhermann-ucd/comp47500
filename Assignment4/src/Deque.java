@@ -26,9 +26,9 @@ public interface Deque<E> {
 	public boolean isEmpty();
 	
 	// returns the first item of the Deque
-	public E front();
+	public E front() throws EmptyDequeException;
 	
 	// returns the last item of teh Deque
-	public E rear();
+	public E rear() throws EmptyDequeException;
 
 }

@@ -101,13 +101,13 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.rear.getPrev() == this.front) {
 			this.emptyInsertion(element);
 		} else {
-			DLNode<E> node = new DLNode(element, this.rear.getPrev(),this.rear);
+			DLNode<E> node = new DLNode(element, this.rear.getPrev(), this.rear);
 			this.rear.getPrev().setNext(node);
 			this.rear.setPrev(node);
 			this.size++;
 		}
 	}
-	
+
 	// removeFirst()
 	public E removeFirst() throws EmptyDequeException {
 		if (this.isEmpty()) {
@@ -121,7 +121,7 @@ public class LinkedDeque<E> implements Deque<E> {
 			return oldFirst.getElement();
 		}
 	}
-	
+
 	// removeLast()
 	public E removeLast() throws EmptyDequeException {
 		if (this.isEmpty()) {
@@ -133,6 +133,36 @@ public class LinkedDeque<E> implements Deque<E> {
 			newLast.setNext(this.rear);
 			this.size--;
 			return oldLast.getElement();
+		}
+	}
+
+	// SUPPORT OPERATIONS
+	// ______________________________________________________________________
+	// size()
+	public int size() {
+		return this.size;
+	}
+
+	// isEmpty()
+	public boolean isEmpty() {
+		return this.size == 0;
+	}
+
+	// front()
+	public E front() throws EmptyDequeException {
+		if (this.isEmpty()) {
+			throw new EmptyDequeException();
+		} else {
+			return this.front.getNext().getElement();
+		}
+	}
+
+	// rear()
+	public E rear() throws EmptyDequeException {
+		if (this.isEmpty()) {
+			throw new EmptyDequeException();
+		} else {
+			return this.rear.getPrev().getElement();
 		}
 	}
 
