@@ -70,8 +70,12 @@ public class LinkedDeque<E> implements Deque<E> {
 	// ______________________________________________________________________
 	public LinkedDeque() {
 		this.size = 0;
-		this.front = new DLNode(null, this.rear, this.rear);
-		this.rear = new DLNode(null, this.front, this.front);
+		this.front = new DLNode(null, null, null);
+		this.rear = new DLNode(null, null, null);
+		this.front.setNext(this.rear);
+		this.front.setPrev(this.rear);
+		this.rear.setNext(this.front);
+		this.rear.setPrev(this.front);
 	}
 
 	// CORE OPERATIONS
@@ -172,15 +176,19 @@ public class LinkedDeque<E> implements Deque<E> {
 	@Override
 	public String toString() {
 		try {
-			DLNode<E> node = this.front.getNext();
-			E element = this.front();
-			String stringObject = "";
-			while (element != null) {
-				stringObject += " <--> " + element.toString();
-				node = node.getNext();
-				element = node.getElement();
+			if (this.isEmpty()) {
+				return "front <--> rear";
+			} else {
+				DLNode<E> node = this.front.getNext();
+				E element = this.front();
+				String stringObject = "";
+				while (element != null) {
+					stringObject += " <--> " + element.toString();
+					node = node.getNext();
+					element = node.getElement();
+				}
+				return "front" + stringObject + " <--> rear";
 			}
-			return "front" + stringObject + " <--> rear";
 		} catch (EmptyDequeException e) {
 			return e.getMessage();
 		}
