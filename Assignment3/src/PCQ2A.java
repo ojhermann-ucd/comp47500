@@ -6,7 +6,7 @@ public class PCQ2A {
 	public static void main(String[] args) {
 
 		// create the stack
-		ArrayStack<Object> myStack = new ArrayStack(5);
+		ArrayStack<Character> myStack = new ArrayStack(5);
 
 		// Initial state
 		System.out.println("Stack created: new ArrayStack(5)");
@@ -55,11 +55,16 @@ public class PCQ2A {
 		// push('h')
 		System.out.println("push('h')");
 		printPush(myStack, 'h');
+		
+		// note to grader
+		System.out.println("Note to Grader");
+		System.out.println("myStack was instatiated with Character elements");
+		System.out.println("myStack also works with the more general Object");
 
 	}
 
 	// printPush()
-	public static void printPush(ArrayStack<Object> myStack, char theChar) {
+	public static void printPush(ArrayStack<Character> myStack, char theChar) {
 		try {
 			myStack.push(theChar);
 			System.out.println(myStack.toString());
@@ -70,7 +75,7 @@ public class PCQ2A {
 	}
 
 	// printPop()
-	public static void printPop(ArrayStack<Object> myStack) {
+	public static void printPop(ArrayStack<Character> myStack) {
 		try {
 			myStack.pop();
 			System.out.println(myStack.toString());

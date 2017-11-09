@@ -16,7 +16,7 @@ public interface Stack<E> {
 	public void push(E element) throws FullStackException;
 	
 	// pop: removes the top element from the stack and returns it; throws an exception if the stack is empty
-	public Object pop() throws EmptyStackException;
+	public E pop() throws EmptyStackException;
 	
 	// toString: returns a string representation of the stack, including the size and the contents, starting with the bottom
 	public String toString();

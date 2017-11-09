@@ -63,41 +63,19 @@ public class ArrayStack<E> implements Stack<E> {
 	}
 
 	// pop()
-	public Object pop() throws EmptyStackException {
+	public E pop() throws EmptyStackException {
 		// pops the top of the stack or throws an exception if the stack is empty
 		if (this.isEmpty()) {
 			throw new EmptyStackException(this.size());
 		} else {
-			Object returnObject = this.top(); // create the return object
+			E returnObject = this.top(); // create the return object
 			this.stack[this.top--] = null; // assign null to the former top index and post-decrement top
 			// return
-			return getPrimitive(returnObject);
+			return returnObject;
+//			return getPrimitive(returnObject);
 		}
 	}
 	
-	// getPrimitive(Object o)
-	public Object getPrimitive(Object o) {
-		// converts a PrimitiveObject into a primitive or returns an object
-		if (o instanceof Character) { // char
-			return ((Character) o).charValue();
-		} else if (o instanceof Byte) { // byte
-			return ((Byte) o).byteValue();
-		} else if (o instanceof Short) { // short
-			return ((Short) o).shortValue();
-		} else if (o instanceof Integer) { // int
-			return (((Integer) o).intValue());
-		} else if (o instanceof Long) { // long
-			return ((Long) o).longValue();
-		} else if (o instanceof Float) { // float
-			return ((Float) o).floatValue();
-		} else if (o instanceof Double) { // double
-			return ((Double) o).doubleValue();
-		} else if (o instanceof Boolean) { // boolean
-			return ((Boolean) o).booleanValue();
-		} else {
-			return o;
-		}
-	}
 
 	// toString()
 	@Override
