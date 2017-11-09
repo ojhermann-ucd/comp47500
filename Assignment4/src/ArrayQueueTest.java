@@ -25,7 +25,7 @@ public class ArrayQueueTest {
 
 	public static void main(String[] args) {
 
-		ArrayQueue<Object> myQueue = new ArrayQueue(3);
+		ArrayQueue<Object> myQueue = new ArrayQueue(5);
 		System.out.println("Action: new ArrayQueue");
 		System.out.println(myQueue.toString());
 
