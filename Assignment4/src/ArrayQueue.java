@@ -34,10 +34,8 @@ public class ArrayQueue<E> implements Queue<E> {
 		if (this.isFull()) {
 			throw new FullQueueException();
 		} else {
-			this.rear = ++this.rear % this.capacity; // pre-increment the index
-														// and convert to an
-														// appropriate figure
-			this.queue[this.rear] = element; // put the element into the array
+			this.queue[this.rear] = element;
+			this.rear = ++this.rear % this.capacity;
 		}
 	}
 
@@ -46,12 +44,10 @@ public class ArrayQueue<E> implements Queue<E> {
 		if (this.isEmpty()) {
 			throw new EmptyQueueException();
 		} else {
-			E returnE = this.queue[this.front]; // obtain the desired object
-			this.queue[this.front] = null; // clear out the existing entry
-			this.front = ++this.front % this.capacity; // pre-increment the
-														// index and convert to
-														// an appropriate figure
-			return returnE; // return the object
+			E returnE = this.queue[this.front];
+			this.queue[this.front] = null;
+			this.front = ++this.front % this.capacity;
+			return returnE;
 		}
 	}
 
@@ -59,12 +55,18 @@ public class ArrayQueue<E> implements Queue<E> {
 	// ______________________________________________________
 	// size()
 	public int size() {
-		return (this.capacity + this.rear - this.front + 1) % this.capacity;
+		if (this.isEmpty()) {
+			return 0;
+		} else {
+			int theSize = (this.capacity + this.rear - this.front) % this.capacity;
+			return theSize == 0 ? this.capacity : theSize;
+		}
+
 	}
 
 	// isEmpty()
 	public boolean isEmpty() {
-		return this.rear == this.front;
+		return this.queue[this.front] == null;
 	}
 
 	// isFull()
@@ -86,13 +88,26 @@ public class ArrayQueue<E> implements Queue<E> {
 		// create components of the return object
 		String stackString = "";
 		String indexString = "";
+		String boundaryString = "";
 		// populate return objects
 		for (int j = 0; j < this.capacity; j++) {
-			stackString += String.format("%-10s", this.queue[j].toString());
+			stackString += String.format("%-10s", this.queue[j] == null ? "null" : this.queue[j].toString());
 			indexString += String.format("%-10d", j);
+			if (this.isEmpty() && j == this.front && j == this.rear) {
+				boundaryString += String.format("%-10s", "fr");
+			} else if (j == this.front && j == this.rear) {
+				boundaryString += String.format("%-10s", "rf");
+			} else if (j == this.front) {
+				boundaryString += String.format("%-10s", "f");
+			} else if (j == this.rear) {
+				boundaryString += String.format("%-10s", "r");
+			} else {
+				boundaryString += String.format("%-10s", "");
+			}
 		}
 		// return
-		return stackString + "\n" + indexString;
+		return String.format("Size: %-10d\n", this.size(), this.front, this.rear) + stackString + "\n" + indexString
+				+ "\n" + boundaryString + "\n";
 	}
 
 }
