@@ -166,4 +166,23 @@ public class LinkedDeque<E> implements Deque<E> {
 		}
 	}
 
+	// TO STRING
+	// ______________________________________________________________________
+	// toString()
+	@Override
+	public String toString() {
+		try {
+			DLNode<E> node = this.front.getNext();
+			E element = this.front();
+			String stringObject = "";
+			while (element != null) {
+				stringObject += " <--> " + element.toString();
+				node = node.getNext();
+				element = node.getElement();
+			}
+			return "front" + stringObject + " <--> rear";
+		} catch (EmptyDequeException e) {
+			return e.getMessage();
+		}
+	}
 }
