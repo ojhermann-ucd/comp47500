@@ -121,5 +121,19 @@ public class LinkedDeque<E> implements Deque<E> {
 			return oldFirst.getElement();
 		}
 	}
+	
+	// removeLast()
+	public E removeLast() throws EmptyDequeException {
+		if (this.isEmpty()) {
+			throw new EmptyDequeException();
+		} else {
+			DLNode<E> oldLast = this.rear.getPrev();
+			DLNode<E> newLast = oldLast.getPrev();
+			this.rear.setPrev(newLast);
+			newLast.setNext(this.rear);
+			this.size--;
+			return oldLast.getElement();
+		}
+	}
 
 }
