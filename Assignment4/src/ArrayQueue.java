@@ -29,16 +29,27 @@ public class ArrayQueue<E> implements Queue<E> {
 
 	// CORE OPERATIONS
 	// ______________________________________________________
+	// enqueue()
 	public void enqueue(E element) throws FullQueueException {
 		if (this.size() == this.capacity) {
 			throw new FullQueueException();
 		} else {
 			this.queue[this.rear] = element;
-			this.rear = ++this.rear % capacity;
+			this.rear = ++this.rear % this.capacity;
 		}
 	}
-
-	public E dequeue() throws EmptyQueueException;
+	
+	// dequeue()
+	public E dequeue() throws EmptyQueueException {
+		if (this.isEmpty()) {
+			throw new EmptyQueueException();
+		} else {
+			E returnE = this.queue[this.front];
+			this.queue[front] = null;
+			this.front = ++this.front % this.capacity;
+			return returnE;
+		}
+	}
 
 	// SUPPORTING OPERATIONS
 	// ______________________________________________________
