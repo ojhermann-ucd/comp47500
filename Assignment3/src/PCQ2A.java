@@ -60,6 +60,7 @@ public class PCQ2A {
 		System.out.println("Note to Grader");
 		System.out.println("myStack was instatiated with Character elements");
 		System.out.println("myStack also works with the more general Object");
+		System.out.println("I've implemented the LinkedStack dry runs with the more general Object");
 
 	}
 
