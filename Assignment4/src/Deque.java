@@ -11,10 +11,10 @@ public interface Deque<E> {
 	public void insertLast(E element);
 	
 	// removes and returns the first element from the Deque 
-	public E removeFirst();
+	public E removeFirst() throws EmptyDequeException;
 	
 	// removes and returns the last element from the Deque
-	public E removeLast();
+	public E removeLast() throws EmptyDequeException;
 	
 	// SUPPORT OPERATIONS
 	// ______________________________________________________

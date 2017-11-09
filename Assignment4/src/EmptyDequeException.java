@@ -1,5 +1,5 @@
 
-public class EmptyDequeException {
+public class EmptyDequeException extends Exception{
 
 	// CONSTRUCTORS
 	public EmptyDequeException () {

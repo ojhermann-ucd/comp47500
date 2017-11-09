@@ -107,5 +107,19 @@ public class LinkedDeque<E> implements Deque<E> {
 			this.size++;
 		}
 	}
+	
+	// removeFirst()
+	public E removeFirst() throws EmptyDequeException {
+		if (this.isEmpty()) {
+			throw new EmptyDequeException();
+		} else {
+			DLNode<E> oldFirst = this.front.getNext();
+			DLNode<E> newFirst = oldFirst.getNext();
+			this.front.setNext(newFirst);
+			newFirst.setPrev(this.front);
+			this.size--;
+			return oldFirst.getElement();
+		}
+	}
 
 }
