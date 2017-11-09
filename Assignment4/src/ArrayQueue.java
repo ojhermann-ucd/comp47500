@@ -34,7 +34,8 @@ public class ArrayQueue<E> implements Queue<E> {
 		if (this.isFull()) {
 			throw new FullQueueException();
 		} else {
-			this.queue[++this.rear % this.capacity] = element;
+			this.rear = ++this.rear % this.capacity;
+			this.queue[this.rear] = element;
 		}
 	}
 	
