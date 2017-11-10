@@ -70,44 +70,40 @@ public class LinkedDeque<E> implements Deque<E> {
 	// ______________________________________________________________________
 	public LinkedDeque() {
 		this.size = 0;
-		this.front = new DLNode(null, null, null);
-		this.rear = new DLNode(null, null, null);
-		this.front.setNext(this.rear);
-		this.front.setPrev(this.rear);
-		this.rear.setNext(this.front);
-		this.rear.setPrev(this.front);
+		this.front = null;
+		this.rear = null;
 	}
 
 	// CORE OPERATIONS
 	// ______________________________________________________________________
 	// emptyInsertion()
 	public void emptyInsertion(E element) {
-		DLNode<E> node = new DLNode(element, this.front, this.rear);
-		this.front.setNext(node);
-		this.rear.setPrev(node);
+		DLNode<E> node = new DLNode(element, null, null);
+		this.front = node;
+		this.rear = this.front;
 		this.size++;
 	}
 
 	// insertFirst()
 	public void insertFirst(E element) {
-		if (this.front.getNext() == rear) {
+		if (this.isEmpty()) {
 			this.emptyInsertion(element);
 		} else {
-			DLNode<E> node = new DLNode(element, this.front, this.front.getNext());
-			this.front.getNext().setPrev(node);
-			this.front.setNext(node);
+			DLNode<E> node = new DLNode(element, null, this.front);
+			this.front.setPrev(node);
+			this.front = node;
 			this.size++;
 		}
 	}
 
 	// insertLast()
 	public void insertLast(E element) {
-		if (this.rear.getPrev() == this.front) {
+		if (this.isEmpty()) {
 			this.emptyInsertion(element);
 		} else {
-			DLNode<E> node = new DLNode(element, this.rear.getPrev(), this.rear);
-			this.rear.getPrev().setNext(node);
-			this.rear.setPrev(node);
+			DLNode<E> node = new DLNode(element, this.rear, null);
+			this.rear.setNext(node);
+			this.rear = node;
 			this.size++;
 		}
 	}
@@ -117,12 +113,15 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.isEmpty()) {
 			throw new EmptyDequeException();
 		} else {
-			DLNode<E> oldFirst = this.front.getNext();
-			DLNode<E> newFirst = oldFirst.getNext();
-			this.front.setNext(newFirst);
-			newFirst.setPrev(this.front);
+			E returnElement = this.front.getElement();
+			this.front = this.front.next;
+			if (this.front == null) {
+				this.rear = null;
+			} else {
+				this.front.prev = null;
+			}
 			this.size--;
-			return oldFirst.getElement();
+			return returnElement;
 		}
 	}
 
@@ -131,12 +130,15 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.isEmpty()) {
 			throw new EmptyDequeException();
 		} else {
-			DLNode<E> oldLast = this.rear.getPrev();
-			DLNode<E> newLast = oldLast.getPrev();
-			this.rear.setPrev(newLast);
-			newLast.setNext(this.rear);
+			E returnElement = this.rear.getElement();
+			this.rear = this.rear.prev;
+			if (this.rear == null) {
+				this.front = null;
+			} else {
+				this.rear.next = null;
+			}
 			this.size--;
-			return oldLast.getElement();
+			return returnElement;
 		}
 	}
 
@@ -157,7 +159,7 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.isEmpty()) {
 			throw new EmptyDequeException();
 		} else {
-			return this.front.getNext().getElement();
+			return this.front.getElement();
 		}
 	}
 
@@ -166,7 +168,7 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.isEmpty()) {
 			throw new EmptyDequeException();
 		} else {
-			return this.rear.getPrev().getElement();
+			return this.rear.getElement();
 		}
 	}
 
@@ -175,22 +177,69 @@ public class LinkedDeque<E> implements Deque<E> {
 	// toString()
 	@Override
 	public String toString() {
-		try {
-			if (this.isEmpty()) {
-				return "front <--> rear";
-			} else {
-				DLNode<E> node = this.front.getNext();
-				E element = this.front();
-				String stringObject = "";
-				while (element != null) {
-					stringObject += " <--> " + element.toString();
-					node = node.getNext();
-					element = node.getElement();
+		if (this.isEmpty()) {
+			String elementObject = String.format("%-10s", "null");
+			String pointerObject = String.format("%-10s", "^");
+			String idObject = String.format("%-10s", "front/rear");
+			return elementObject + "\n" + pointerObject + "\n" + idObject;
+		} else if (this.size == 1) {
+			DLNode<E> node = this.front;
+			String elementObject = String.format("%-10s", node.getElement().toString());
+			String pointerObject = String.format("%-10s", "^");
+			String idObject = String.format("%-10s", "front/rear");
+			return elementObject + "\n" + pointerObject + "\n" + idObject;
+		} else {
+			String stringObject = "";
+			String elementObject = "";
+			String pointerObject = "";
+			String idObject = "";
+			DLNode<E> node = this.front;
+			for (int j = 0; j<this.size; j++) {
+				elementObject += String.format("%-10s", node.getElement().toString());
+				if (j == 0 || j == this.size - 1) {
+					pointerObject += String.format("%-10s", "^");
+					idObject += String.format("%-10s", "front");
+				} else {
+					pointerObject += String.format("%-10s", " ");
+					idObject += String.format("%-10s", "rear");
 				}
-				return "front" + stringObject + " <--> rear";
+				node = node.getNext();
 			}
-		} catch (EmptyDequeException e) {
-			return e.getMessage();
+			return elementObject + "\n" + pointerObject + "\n" + idObject;
 		}
+		
+//		
+//		if (this.isEmpty()) {
+//			String elementObject = String.format("%-10s %-10s", "null", "null");
+//			String pointerObject = String.format("%-10s %-10s", "^", "^");
+//			String idObject = String.format("%-10s %-10s", "front", "rear");
+//			return elementObject + "\n" + pointerObject + "\n" + idObject;
+//		} else if (this.size == 1) {
+//			DLNode<E> node = this.front;
+//			String elementObject = String.format("%-10s", node.getElement());
+//			String pointerObject = String.format("%-10s", "^");
+//			String idObject = String.format("%-10s", "front/rear");
+//			return elementObject + "\n" + pointerObject + "\n" + idObject;
+//		} else {
+//			// get the first element
+//			DLNode<E> node = this.front;
+//			// index 0
+//			String elementObject = String.format("%-10s", node.getElement());
+//			String pointerObject = String.format("%-10s", "^");
+//			String idObject = String.format("%-10s", "front");
+//
+//			for (int j = 1; j < this.size - 1; j++) {
+//				node = node.getNext();
+//				elementObject += String.format("%-10s", node.getElement());
+//				pointerObject += String.format("%-10s", "^");
+//				idObject += String.format("%-10s", "rear");
+//			}
+//			
+//			elementObject += String.format("%-10s", node.getElement());
+//			pointerObject += String.format("%-10s", "^");
+//			idObject += String.format("%-10s", "rear");
+//			
+//			return elementObject + "\n" + pointerObject + "\n" + idObject;
+//		}
 	}
 }
