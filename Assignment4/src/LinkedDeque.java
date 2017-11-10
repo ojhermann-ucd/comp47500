@@ -194,52 +194,21 @@ public class LinkedDeque<E> implements Deque<E> {
 			String pointerObject = "";
 			String idObject = "";
 			DLNode<E> node = this.front;
-			for (int j = 0; j<this.size; j++) {
+			for (int j = 0; j < this.size; j++) {
 				elementObject += String.format("%-10s", node.getElement().toString());
-				if (j == 0 || j == this.size - 1) {
+				if (j == 0) {
 					pointerObject += String.format("%-10s", "^");
 					idObject += String.format("%-10s", "front");
+				} else if (j == this.size - 1) {
+					pointerObject += String.format("%-10s", "^");
+					idObject += String.format("%-10s", "rear");
 				} else {
 					pointerObject += String.format("%-10s", " ");
-					idObject += String.format("%-10s", "rear");
+					idObject += String.format("%-10s", " ");
 				}
 				node = node.getNext();
 			}
 			return elementObject + "\n" + pointerObject + "\n" + idObject;
 		}
-		
-//		
-//		if (this.isEmpty()) {
-//			String elementObject = String.format("%-10s %-10s", "null", "null");
-//			String pointerObject = String.format("%-10s %-10s", "^", "^");
-//			String idObject = String.format("%-10s %-10s", "front", "rear");
-//			return elementObject + "\n" + pointerObject + "\n" + idObject;
-//		} else if (this.size == 1) {
-//			DLNode<E> node = this.front;
-//			String elementObject = String.format("%-10s", node.getElement());
-//			String pointerObject = String.format("%-10s", "^");
-//			String idObject = String.format("%-10s", "front/rear");
-//			return elementObject + "\n" + pointerObject + "\n" + idObject;
-//		} else {
-//			// get the first element
-//			DLNode<E> node = this.front;
-//			// index 0
-//			String elementObject = String.format("%-10s", node.getElement());
-//			String pointerObject = String.format("%-10s", "^");
-//			String idObject = String.format("%-10s", "front");
-//
-//			for (int j = 1; j < this.size - 1; j++) {
-//				node = node.getNext();
-//				elementObject += String.format("%-10s", node.getElement());
-//				pointerObject += String.format("%-10s", "^");
-//				idObject += String.format("%-10s", "rear");
-//			}
-//			
-//			elementObject += String.format("%-10s", node.getElement());
-//			pointerObject += String.format("%-10s", "^");
-//			idObject += String.format("%-10s", "rear");
-//			
-//			return elementObject + "\n" + pointerObject + "\n" + idObject;
-//		}
 	}
 }
