@@ -5,12 +5,14 @@ public class PCQ4L {
 		myDeque.insertFirst(s);
 		System.out.println(String.format("insertFirst(%s)", s));
 		System.out.println(myDeque.toString() + "\n");
+		System.out.println("\n");
 	}
 
 	public static void lastInsert(String s, LinkedDeque<String> myDeque) {
 		myDeque.insertLast(s);
 		System.out.println(String.format("insertLast(%s)", s));
 		System.out.println(myDeque.toString() + "\n");
+		System.out.println("\n");
 	}
 
 	public static String firstRemove(LinkedDeque<String> myDeque) {
@@ -18,6 +20,7 @@ public class PCQ4L {
 			String tempString = myDeque.removeFirst().toString() + " ";
 			System.out.println("removeFirst()");
 			System.out.println(myDeque.toString() + "\n");
+			System.out.println("\n");
 			return tempString;
 		} catch (EmptyDequeException e) {
 			return e.getMessage();
@@ -29,6 +32,7 @@ public class PCQ4L {
 			String tempString = myDeque.removeLast().toString() + " ";
 			System.out.println("removeLast()");
 			System.out.println(myDeque.toString() + "\n");
+			System.out.println("\n");
 			return tempString;
 		} catch (EmptyDequeException e) {
 			return e.getMessage();
@@ -44,6 +48,7 @@ public class PCQ4L {
 		LinkedDeque<String> myDeque = new LinkedDeque();
 		System.out.println("Deque created: LinkedDeque");
 		System.out.println(myDeque.toString() + "\n");
+		System.out.println("\n");
 
 		// requirements
 		firstInsert("Ireland", myDeque);

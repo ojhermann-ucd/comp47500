@@ -180,31 +180,67 @@ public class LinkedDeque<E> implements Deque<E> {
 		if (this.isEmpty()) {
 			String elementObject = String.format("%-10s", "null");
 			String pointerObject = String.format("%-10s", "^");
-			String idObject = String.format("%-10s", "front/rear");
+			String idObject = String.format("%-10s", "front & rear");
 			return elementObject + "\n" + pointerObject + "\n" + idObject;
 		} else if (this.size == 1) {
 			DLNode<E> node = this.front;
-			String elementObject = String.format("%-10s", node.getElement().toString());
-			String pointerObject = String.format("%-10s", "^");
-			String idObject = String.format("%-10s", "front/rear");
+			String elementObject = String.format("%-10s", "null <-- " + node.getElement().toString()) + " --> null";
+			String pointerObject = String.format("%-10s", "         ^         ");
+			String idObject = String.format("%-10s", "   front & rear");
 			return elementObject + "\n" + pointerObject + "\n" + idObject;
-		} else {
+		} else if (this.size == 2) {
+			String firstHalf = "null <-- " + this.front.getElement().toString() + " <--> ";
+			String secondHalf = this.rear.getElement().toString() + " --> null";
+			String elementObject = firstHalf + secondHalf;
+			String pointerObject = "         ^";
+			for (int k = 0; k < firstHalf.length() - 10; k++) {
+				pointerObject += " ";
+			}
+			pointerObject += "^";
+			String idObject = "         front";
+			for (int k = 0; k < firstHalf.length() - 14; k++) {
+				idObject += " ";
+			}
+			idObject += "rear";
+			return elementObject + "\n" + pointerObject + "\n" + idObject;
+		}
+		
+		else {
 			String stringObject = "";
 			String elementObject = "";
 			String pointerObject = "";
 			String idObject = "";
 			DLNode<E> node = this.front;
 			for (int j = 0; j < this.size; j++) {
-				elementObject += String.format("%-10s", node.getElement().toString());
 				if (j == 0) {
-					pointerObject += String.format("%-10s", "^");
-					idObject += String.format("%-10s", "front");
+					String firstString = "null <-- ";
+					String mainString = firstString + node.getElement().toString();
+					elementObject += mainString;
+					for (int k = 0; k < firstString.length(); k++) {
+						pointerObject += " ";
+						idObject += " ";
+					}
+					pointerObject += "^";
+					idObject += "front";
+					for (int k = 0; k < mainString.length() - firstString.length(); k++) {
+						pointerObject += " ";
+					}
+					for (int k = 0; k < mainString.length() - firstString.length() - "front".length() + 1; k++) {
+						idObject += " ";
+					}
 				} else if (j == this.size - 1) {
-					pointerObject += String.format("%-10s", "^");
-					idObject += String.format("%-10s", "rear");
+					String secondString = " --> null";
+					String mainString = node.getElement().toString() + secondString;
+					elementObject += mainString;
+					pointerObject += "^";
+					idObject += "rear";
 				} else {
-					pointerObject += String.format("%-10s", " ");
-					idObject += String.format("%-10s", " ");
+					String mainString = " <--> " + node.getElement().toString() + " <--> ";
+					elementObject += mainString;
+					for (int k = 0; k < mainString.length(); k++) {
+						pointerObject += " ";
+						idObject += " ";
+					}
 				}
 				node = node.getNext();
 			}
