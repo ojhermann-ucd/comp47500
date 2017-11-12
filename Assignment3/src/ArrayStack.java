@@ -72,7 +72,6 @@ public class ArrayStack<E> implements Stack<E> {
 			this.stack[this.top--] = null; // assign null to the former top index and post-decrement top
 			// return
 			return returnObject;
-//			return getPrimitive(returnObject);
 		}
 	}
 	
