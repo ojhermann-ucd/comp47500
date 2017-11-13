@@ -15,7 +15,7 @@ public class ArrayStack<E> implements Stack<E> {
 	// ______________________________________________________________________
 	// with argument
 	public ArrayStack(int capacity) {
-		// instatiate field values
+		// instantiate field values
 		this.capacity = capacity;
 		this.top = -1;
 		this.stack = (E[]) new Object[this.capacity];
