@@ -91,7 +91,7 @@ public class LinkedStack<E> implements Stack<E> {
 		node.setNext(this.top);
 		// set top to node
 		this.top = node;
-		// increse size
+		// increase size
 		this.size++;
 	}
 
