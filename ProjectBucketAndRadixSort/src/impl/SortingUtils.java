@@ -175,11 +175,12 @@ public class SortingUtils {
 
 		System.out.println("This is srsTest()\n");
 
-		System.out.println("String array sorted with varying values of digits i.e. sort by how many letters\n");
+		System.out.println("String array sorted with varying values of digits");
+		System.out.println("e.g. digits = 2 sorts by first two characters in string\n");
 
 		// populate the list
 		List<String> list = new LinkedList<String>();
-		String[] InputArray = { "the", "big", "black", "cat", "sat", "on", "the", "beautiful", "brown", "mat" };
+		String[] InputArray = { "ab", "aa", "a", "the", "big", "black", "cat", "sat", "on", "the", "beautiful", "brown", "mat" };
 		int maxString = 0;
 		for (String s : InputArray) {
 			list.insertLast(s);
@@ -254,12 +255,12 @@ public class SortingUtils {
 		 * O(n) time complexity, O(1) space complexity
 		 */
 
-		// charArray: populate buckets by the value of the character in the string at index
+		// populate buckets by the value of the character in the string at index
+		List<String> smallList = new LinkedList<String>();
 		while (!list.isEmpty()) {
 			String listString = list.remove(list.first());
-			if (index > listString.length() - 1) { // mimic uniform length strings: assume there is a character and its the smallest possible
-				int currentIndex = Character.getNumericValue(listString.charAt(0));
-				charArray[currentIndex].insertLast(listString);
+			if (index > listString.length() - 1) { 
+				smallList.insertLast(listString);
 			} else {
 				Character listCharacter = listString.charAt(index);
 				int listInt = Character.getNumericValue(listCharacter);
@@ -267,7 +268,10 @@ public class SortingUtils {
 			}
 		}
 
-		// list: put the values bucketed by the character at index 
+		// list: put the values bucketed by the character at index
+		while(!smallList.isEmpty()) {
+			list.insertLast(smallList.remove(smallList.first()));
+		}
 		for (List<String> currentList : charArray) {
 			while (!currentList.isEmpty()) {
 				list.insertLast(currentList.remove(currentList.first()));
