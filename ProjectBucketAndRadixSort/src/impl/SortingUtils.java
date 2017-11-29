@@ -180,8 +180,8 @@ public class SortingUtils {
 
 		// populate the list
 		List<String> list = new LinkedList<String>();
-		String[] InputArray = { "b", "ab", "aa", "a", "the", "big", "black", "cat", "sat", "on", "the", "beautiful", "brown",
-				"mat" };
+		String[] InputArray = { "b", "ab", "aa", "a", "the", "big", "black", "cat", "sat", "on", "the", "beautiful",
+				"brown", "mat", "aaaaaa" };
 		int maxString = 0;
 		for (String s : InputArray) {
 			list.insertLast(s);
@@ -224,8 +224,7 @@ public class SortingUtils {
 		 * 
 		 * O(dn) time complexity, where d = digits, n = number of strings
 		 * 
-		 * O(n + m) space complexity, n = number of strings, m = number of
-		 * strings of length less than digits
+		 * O(n) space complexity, n = number of strings
 		 */
 
 		// maxChar
@@ -237,7 +236,7 @@ public class SortingUtils {
 		}
 
 		// charArray: acts as buckets for character values found in the strings
-		List<String>[] charArray = (List<String>[]) Array.newInstance(List.class, maxChar);
+		List<String>[] charArray = (List<String>[]) Array.newInstance(List.class, maxChar + 1);
 		for (int j = 0; j < charArray.length; j++) {
 			charArray[j] = new LinkedList<String>();
 		}
@@ -255,20 +254,15 @@ public class SortingUtils {
 		 * 
 		 * Double pass counting sort to bucket strings by the character at index
 		 * 
-		 * O(n) time complexity, O(m) space complexity, where m < n, usually m
-		 * << n
+		 * O(n) time complexity, O(1) space complexity
 		 * 
 		 */
-
-		// smallList: will hold strings where string.length - 1 < index
-		// smallList: equivalent to another slot in charArray, but kept distinct for clarity
-		List<String> smallList = new LinkedList<String>();
 
 		// populate buckets by the value of the character in the string at index
 		while (!list.isEmpty()) {
 			String listString = list.remove(list.first());
 			if (index > listString.length() - 1) {
-				smallList.insertLast(listString);
+				charArray[charArray.length - 1].insertLast(listString);
 			} else {
 				Character listCharacter = listString.charAt(index);
 				int listInt = Character.getNumericValue(listCharacter);
@@ -277,13 +271,13 @@ public class SortingUtils {
 		}
 
 		// list: first put all items from smallList into list
-		// we do this so that the shortest words will always be bucketed first when this function is called for a different index
-		// this matches our understanding that e.g. a is before aa, ba before baa, etc.
-		while (!smallList.isEmpty()) {
-			list.insertLast(smallList.remove(smallList.first()));
+		List<String> firstList = charArray[charArray.length - 1];
+		while (!firstList.isEmpty()) {
+			list.insertLast(firstList.remove(firstList.first()));
 		}
-		// list: put the values bucketed by the character at index
-		for (List<String> currentList : charArray) {
+		// list: put rest of strings already bucketed onto list
+		for (int j = 0; j < charArray.length - 1; j++) {
+			List<String> currentList = charArray[j];
 			while (!currentList.isEmpty()) {
 				list.insertLast(currentList.remove(currentList.first()));
 			}
