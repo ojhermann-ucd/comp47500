@@ -214,9 +214,6 @@ public class SortingUtils {
 		 * 
 		 * At each pass decrement digits
 		 * 
-		 * If digits > string.length(), move string to the first bucket for next
-		 * pass
-		 * 
 		 * Intentionally did not mimic this:
 		 * https://www.cs.princeton.edu/~rs/AlgsDS07/18RadixSort.pdf
 		 * 
@@ -227,8 +224,8 @@ public class SortingUtils {
 		 * O(n) space complexity, n = number of strings
 		 */
 
-		// maxChar
-		int maxChar = 0; // allows for creation of buckets for sorting the strings
+		// maxChar: allows for the efficient creation of buckets for sorting the strings
+		int maxChar = 0; 
 		for (String inputString : list) {
 			for (int j = 0; j < inputString.length(); j++) {
 				maxChar = maxChar < inputString.charAt(j) ? inputString.charAt(j) : maxChar;
@@ -241,7 +238,7 @@ public class SortingUtils {
 			charArray[j] = new LinkedList<String>();
 		}
 
-		// bucket each string based on char value at index, right to left across the sting from digits to zero
+		// bucket each string based on char value at index, right to left across the string from digits to zero
 		for (int j = digits - 1; -1 < j; j--) {
 			stringRadixSortInner(list, j, charArray);
 		}
@@ -270,7 +267,7 @@ public class SortingUtils {
 			}
 		}
 
-		// list: first put all items from smallList into list
+		// list: first put all items with length < digits into list
 		List<String> firstList = charArray[charArray.length - 1];
 		while (!firstList.isEmpty()) {
 			list.insertLast(firstList.remove(firstList.first()));
