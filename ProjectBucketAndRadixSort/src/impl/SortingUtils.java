@@ -252,7 +252,7 @@ public class SortingUtils {
 		 * 
 		 * Double pass counting sort to bucket strings by the character at index
 		 * 
-		 * O(n) time complexity, O(1) space complexity
+		 * O(n) time complexity, O(m) space complexity, where m < n, normally m << n
 		 */
 
 		// populate buckets by the value of the character in the string at index
